@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>注册页面</title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<style>
+			td,th{
+				border:2px solid red;
+			}
+			table{
+				/*设置表格边框合并为单一边框*/
+				border-collapse:collapse;
+				background:lightgray;
+				margin:0 auto;
+			}
+			td,th{
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="http://localhost/day11/RequestDemo2" method="POST">
+			<table>
+				<caption>用户注册</caption>
+				<tr>
+					<td>用户名:</td>				
+					<td><input type="text" name="username"/></td>				
+				</tr>
+				<tr>
+					<td>密码:</td>				
+					<td><input type="password" name="password1"/></td>				
+				</tr>
+				<tr>
+					<td>确认密码:</td>				
+					<td><input type="password" name="password2"/></td>				
+				</tr>
+				<tr>
+					<td>昵称:</td>				
+					<td><input type="text" name="nickname"/></td>				
+				</tr>
+				<tr>
+					<td>邮箱:</td>				
+					<td><input type="text" name="email"/></td>				
+				</tr>
+				<tr>
+					<td>性别:</td>				
+					<td>
+						<input type="radio" name="gender"/>男
+						<!-- checked：设置单选框或复选框默认被选中 -->
+						<input type="radio" name="gender" checked="checked"/>女
+					</td>				
+				</tr>
+				<tr>
+					<td>爱好:</td>				
+					<td>
+						<input type="checkbox" name="like" value="basketball" checked="checked"/>篮球
+						<input type="checkbox" name="like" value="football"/>足球
+						<input type="checkbox" name="like" value="volleyball"/>排球
+					</td>				
+				</tr>
+				<tr>
+					<td>城市:</td>				
+					<td>
+						<select name="city">
+							<option value="bj">北京</option>
+							<!-- selected：设置option选项默认被选中 -->
+							<option value="sh" selected="selected">上海</option>
+							<option value="sz">深圳</option>
+						</select>
+					</td>				
+				</tr>
+				<tr>
+					<td>头像:</td>				
+					<td><input type="file" name="txImg"/></td>				
+				</tr>
+				<tr>
+					<td>验证码:</td>				
+					<td>
+						<input type="text" name="valiimg"/>
+						<img src="imgs/vc.jpg" width="80px" height="20px"/>
+						<input type="button" value="换一个"/>
+					</td>				
+				</tr>
+				<tr>
+					<td>自我描述:</td>				
+					<td>
+						<textarea name="desc" cols="30" rows="5">请输入描述信息！</textarea>
+					</td>				
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="提交"/>
+						<input type="reset" value="重置"/>
+					</td>				
+				</tr>
+			</table>	
+		</form>	
+	</body>
+</HTML>

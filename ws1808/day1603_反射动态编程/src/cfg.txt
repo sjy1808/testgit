@@ -1,3 +1,0 @@
-day1603.A;a
-day1603.B;b
-day1603.C;c

@@ -1,0 +1,6 @@
+127.0.0.1 - - [23/Oct/2018:10:08:56 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2018:10:10:12 +0800] "GET /cgb1808/StudentAddServlet HTTP/1.1" 200 76
+0:0:0:0:0:0:0:1 - - [23/Oct/2018:10:10:12 +0800] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [23/Oct/2018:10:10:15 +0800] "GET /cgb1808/StudentListServlet HTTP/1.1" 404 1003
+127.0.0.1 - - [23/Oct/2018:17:31:13 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [23/Oct/2018:17:31:14 +0800] "GET /webserverday2/WEB-INF/classes/cn/tedu/common/ServletContext.java HTTP/1.1" 404 949

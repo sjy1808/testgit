@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;pw&apos; from expression &apos;response.getWriter()&apos;&#x0D;&#x0A;- Original project: &apos;day11&apos;&#x0D;&#x0A;- Variable name: &apos;pw&apos;&#x0D;&#x0A;- Destination method: &apos;com.tedu.request.RequestDemo3.doGet()&apos;&#x0D;&#x0A;- Variable expression: &apos;response.getWriter()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;pw&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;com.tedu.request{RequestDemo3.java" name="pw" replace="true" selection="581 0" stamp="1539574055025" version="1.0"/>
+</session>

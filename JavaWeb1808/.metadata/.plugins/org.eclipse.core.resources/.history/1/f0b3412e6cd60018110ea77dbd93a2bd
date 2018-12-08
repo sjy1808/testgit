@@ -1,0 +1,58 @@
+package cn.tedu.http;
+/**
+ * 这个类用来封装响应信息
+ * 1.封装四个响应参数
+ * 2.在构造函数中传入
+ */
+public class HttpResponse {
+	//1.封装4个响应参数
+	//遵循的协议名和版本号
+	private String protocol;
+	
+	//状态码
+	private int status;
+	
+	//响应头Content-Type
+	private String contentType;
+	
+	//响应头Content-Length
+	private int contentLength;
+
+	//getters和setters
+	public String getProtocol() {
+		return protocol;
+	}
+
+	public void setProtocol(String protocol) {
+		this.protocol = protocol;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+
+	public int getContentLength() {
+		return contentLength;
+	}
+
+	public void setContentLength(int contentLength) {
+		this.contentLength = contentLength;
+	}
+	
+	
+	
+	
+	
+}

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract local variable &apos;a&apos; from expression &apos;list2.getFirst()&apos;&#x0D;&#x0A;- Original project: &apos;day1101_丑数&apos;&#x0D;&#x0A;- Variable name: &apos;a&apos;&#x0D;&#x0A;- Destination method: &apos;day1101.Test1.f()&apos;&#x0D;&#x0A;- Variable expression: &apos;list2.getFirst()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;a&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;day1101{Test1.java" name="a" replace="true" selection="776 0" stamp="1536889081022" version="1.0"/>
-</session>

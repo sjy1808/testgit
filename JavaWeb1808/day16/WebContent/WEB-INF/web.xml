@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>day16</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>HelloServlet</display-name>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>com.tedu.filter.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 配置监听器 -->
+  <listener>
+  	<listener-class>com.tedu.listener.MyServletContextListener</listener-class>
+  </listener>
+  
+  <!-- 配置过滤器 -->
+  <filter>
+  	<filter-name>FilterDemo2</filter-name>
+  	<filter-class>com.tedu.filter.FilterDemo2</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterDemo2</filter-name>
+  	<!-- 配置过滤器所拦截的资源路径
+  		url-pattern可以配置多个! -->
+  	<url-pattern>/HelloServlet</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>FilterDemo1</filter-name>
+  	<filter-class>com.tedu.filter.FilterDemo1</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterDemo1</filter-name>
+  	<!-- 配置过滤器所拦截的资源路径
+  		url-pattern可以配置多个! -->
+  	<url-pattern>/HelloServlet</url-pattern>
+  </filter-mapping>
+  
+</web-app>

@@ -1,0 +1,2 @@
+127.0.0.1 - - [22/Oct/2018:15:00:20 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [22/Oct/2018:15:00:20 +0800] "GET /webserverday1/WEB-INF/classes/cn/tedu/core/ClientHandler.java HTTP/1.1" 404 949

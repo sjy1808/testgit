@@ -1,0 +1,35 @@
+package cn.tedu.common;
+/**
+ * 用来封装服务器相关的参数信息 
+ * 1.创建ServletContext对象,读取xml的数据
+ * 2.创建静态代码块完成封装
+ */
+public class ServletContext {
+	//1.声明和web.xml对应的参数
+	//参数的修饰符??public
+	//为了方便调用如何修饰参数?? static
+	//参数类型
+	
+	//端口号
+	public static int prot;
+	
+	//最大线程数
+	public static int marSize;
+	
+	//协议名和版本号
+	public static String protocol;
+	
+	//webContent资源管理的根目录
+	public static String webRoot;
+	
+	
+	//2.在静态代码块中完成赋值
+	static{//创建static时,就会被加载,而且只加载一次
+		init();
+	}
+
+	//xml解析
+	private static void init() {
+		
+	}
+}

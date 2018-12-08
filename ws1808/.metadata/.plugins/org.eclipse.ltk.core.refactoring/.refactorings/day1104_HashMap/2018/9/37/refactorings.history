@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract local variable &apos;keys&apos; from expression &apos;map.keySet()&apos;&#x0D;&#x0A;- Original project: &apos;day1104_HashMap&apos;&#x0D;&#x0A;- Variable name: &apos;keys&apos;&#x0D;&#x0A;- Destination method: &apos;day1104.Test1.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;map.keySet()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;keys&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;day1104{Test1.java" name="keys" replace="true" selection="706 0" stamp="1536913403561" version="1.0"/>
-</session>

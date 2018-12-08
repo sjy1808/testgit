@@ -1,0 +1,5 @@
+package cn.tedu.http;
+
+public class HttpResponse {
+
+}

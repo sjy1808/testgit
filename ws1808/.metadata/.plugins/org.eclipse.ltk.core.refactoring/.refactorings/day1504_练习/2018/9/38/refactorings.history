@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract local variable &apos;stack&apos; from expression &apos;new Stack()&apos;&#x0D;&#x0A;- Original project: &apos;day1504_练习&apos;&#x0D;&#x0A;- Variable name: &apos;stack&apos;&#x0D;&#x0A;- Destination method: &apos;day1504.Test4.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;new Stack()&apos;" description="Extract local variable &apos;stack&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;day1504{Test4.java" name="stack" replace="false" selection="99 0" stamp="1537449164420" version="1.0"/>
-</session>

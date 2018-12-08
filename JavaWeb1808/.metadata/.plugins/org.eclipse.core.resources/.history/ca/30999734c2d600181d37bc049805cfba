@@ -1,0 +1,25 @@
+package cn.tedu.common;
+/**
+ * 这个类用来封装服务器相关的参数信息
+ * 1.创建ServletContext对象,读取xml的数据
+ * 2.创建静态码块完成封装
+ */
+public class ServletContext {
+	//1.声明和web.xml对应的参数
+	//端口号
+	public static int port;
+	//最大线程数
+	public static int maxSize;
+	//协议名和版本号
+	public static String protocol;
+	//资源管理的根目录
+	public static String webRoot;
+	//2.在静态代码块中完成赋值
+	static{
+		init();
+	}
+	//利用dom4j技术解析xml
+	private static void init() {
+		
+	}
+}

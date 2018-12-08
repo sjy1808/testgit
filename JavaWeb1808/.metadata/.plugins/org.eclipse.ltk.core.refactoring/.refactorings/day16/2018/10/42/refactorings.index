@@ -1,0 +1,8 @@
+1539921111330	Extract local variable 'frame'
+1539921201714	Extract local variable 'btn'
+1539921514349	Extract local variable 'listener'
+1539929639752	Extract local variable 'frame'
+1539929948447	Extract local variable 'btn'
+1539930201626	Extract local variable 'listener'
+1539950872657	Extract local variable 'username'
+1539951071904	Extract local variable 'rs'

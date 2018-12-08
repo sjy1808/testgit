@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+	<service>
+		<connector port="8080" maxSize="100" protocol="HTTP/1.1"></connector>
+		<webRoot>WebContent</webRoot>
+		<!-- 配置notfoundpage标签 -->
+		<notfoundpage>404.html</notfoundpage>
+	</service>
+</server>

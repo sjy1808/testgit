@@ -1,0 +1,5 @@
+1539603701857	Extract local variable 'out'
+1539604096958	Extract local variable 'pw'
+1539605049948	Extract local variable 'username'
+1539605143041	Extract local variable 'password1'
+1539605207806	Extract local variable 'nickname'

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.tedu.util&apos; to &apos;webserverday3v4.0/src&apos;&#x0D;&#x0A;- Original project: &apos;day01_jdbc&apos;&#x0D;&#x0A;- Destination element: &apos;webserverday3v4.0/src&apos;&#x0D;&#x0A;- Original element: &apos;day01_jdbc/src/com.tedu.util&apos;" description="Copy package" destination="=webserverday3v4.0/src" element1="/src&lt;com.tedu.util" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1540349355148" version="1.0"/>
+</session>

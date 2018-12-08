@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<title>注册页面</title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1>GET提交</h1>
+		<form action="http://localhost/day11_homework/LoginServlet" method="GET">
+			<table border="1px" bordercolor="red" bgcolor="lightgray" cellspacing="0px" cellpadding="5px" align="center">
+				<tr>
+					<td>用户名:</td>				
+					<td><input type="text" name="username"/></td>				
+				</tr>
+				<tr>
+					<td>密码:</td>				
+					<td><input type="password" name="password1"/></td>				
+				</tr>
+				<tr>
+					<td>昵称:</td>				
+					<td><input type="text" name="nickname"/></td>				
+				</tr>
+				
+				<tr>
+					<td>个人简介:</td>				
+					<td>
+						<textarea name="desc" cols="30" rows="5">请输入描述信息！</textarea>
+					</td>				
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="提交"/>
+						<input type="reset" value="重置"/>
+					</td>				
+				</tr>
+			</table>	
+		</form>	
+
+		
+		<h1>POST提交</h1>
+		<form action="http://localhost/day11_homework/TestDemo2" method="POST">
+			<table border="1px" bordercolor="red" bgcolor="lightgray" cellspacing="0px" cellpadding="5px" align="center">
+				<tr>
+					<td>用户名:</td>				
+					<td><input type="text" name="username"/></td>				
+				</tr>
+				<tr>
+					<td>密码:</td>				
+					<td><input type="password" name="password1"/></td>				
+				</tr>
+				<tr>
+					<td>昵称:</td>				
+					<td><input type="text" name="nickname"/></td>				
+				</tr>
+				
+				<tr>
+					<td>个人简介:</td>				
+					<td>
+						<textarea name="desc" cols="30" rows="5">请输入描述信息...！</textarea>
+					</td>				
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="提交"/>
+						<input type="reset" value="重置"/>
+					</td>				
+				</tr>
+			</table>	
+		</form>	
+	</body>
+</HTML>

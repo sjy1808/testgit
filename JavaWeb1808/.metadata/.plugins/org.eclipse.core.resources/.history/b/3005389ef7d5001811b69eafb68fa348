@@ -1,0 +1,57 @@
+package cn.tedu.core;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.Socket;
+
+/**
+ * 这个类用来优化WebServer,是一个线程类
+ * 1.实现线程类
+ * 2.声明Socket对象
+ * 3.在构造函数中初始化socket,并且当做参数
+ * 4.重写run方法,提取响应代码
+ */
+//1.实现线程类
+public class ClientHandler implements Runnable{
+	//2.声明Socket对象
+	private Socket socket;
+	
+	//在构造函数中初始化socket,并且当做参数
+	public ClientHandler(Socket socket){
+		this.socket=socket;
+	}
+	//重写run方法,提取响应代码
+	@Override
+	public void run() {
+		try {
+			//拼接响应头
+			PrintStream ps = new PrintStream(socket.getOutputStream());
+			//拼接状态行
+			ps.println("HTTP/1.1 200 OK");
+			ps.println("Content-Type:text/html");
+			//响应一个字符串
+			/*String data="say goodbay!";
+			ps.println("Content-Length:"+data.length());*/
+			//响应网页文件
+			File file = new File("WebContent/index.html");
+			ps.println("Content-Length:"+file.length());
+			
+			ps.println("");
+			//ps.write(data.getBytes());
+			//响应网页文件
+			BufferedInputStream bis=new BufferedInputStream(new FileInputStream(file));
+			byte[] b=new byte[(int) file.length()];
+			bis.read(b);//读文件
+			ps.write(b);//写出文件
+			
+			ps.flush();
+			socket.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}
