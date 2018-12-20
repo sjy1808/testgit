@@ -1,0 +1,13 @@
+package com.jt.sys.dao;
+
+import java.util.List;
+import java.util.Map;
+
+public interface SysDeptDao {
+
+	/**
+	 * 查询数据库中所有的部门信息
+	 * @return
+	 */
+	List<Map<String,Object>> findObjects();
+}

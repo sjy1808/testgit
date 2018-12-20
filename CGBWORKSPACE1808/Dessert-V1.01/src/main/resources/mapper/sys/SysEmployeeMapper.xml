@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dessert.sys.dao.SysEmployeeDao">
+	<select id="findPageObjects" resultType="com.dessert.sys.entity.SysEmployee">
+		select * from employee
+		<include refid="queryWhereId"></include>
+		limit #{startIndex},#{pageSize}
+
+	</select>
+	<select id="getRowCount" resultType="int">
+		select count(*) from employee
+		<include refid="queryWhereId"></include>
+	</select>
+	<sql id="queryWhereId">
+		<where>
+			<if test="name!=null and name!=''">
+				name like concat("%",#{name},"%")
+			</if>
+		</where>
+	</sql>
+	<insert id="insertObject" parameterType="com.dessert.sys.entity.SysEmployee">
+		insert into employee
+		(gender,name,age,role,phone,email,hiredate,adress)
+		values
+		(#{gender},#{name},#{age},#{role},#{phone},#{email},now(),#{adress})
+	</insert>
+	<delete id="deleteObject" parameterType="int">
+		delete from employee
+		where id=#{id}
+	</delete>
+	<select id="findObjectById" resultType="com.dessert.sys.entity.SysEmployee">
+		select * from employee
+		where id=#{id}
+	</select>
+	<update id="updateObject">
+		update employee
+		set
+		gender=#{gender},
+		name=#{name},
+		age=#{age},
+		role=#{role},
+		phone=#{phone},
+		email=#{email},
+		hiredate=#{hiredate},
+		adress=#{adress}
+		where id=#{id}
+	</update>
+	
+	<select id="getEmployeeCountByDeptId"
+            resultType="int">
+         select count(*)
+         from employee
+         where deptId=#{deptId}        
+    </select>
+	
+</mapper>

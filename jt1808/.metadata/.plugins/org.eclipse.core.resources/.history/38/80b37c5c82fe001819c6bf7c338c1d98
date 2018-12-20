@@ -1,0 +1,23 @@
+package com.jt.common.service;
+
+
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class HttpClientService {
+
+    @Autowired(required=false)
+    private CloseableHttpClient httpClient;//超时时间
+
+    @Autowired(required=false)
+    private RequestConfig requestConfig;
+
+    //编辑请求发送的方式,获取返回值的结果给调用者.
+    
+    
+    
+    
+}

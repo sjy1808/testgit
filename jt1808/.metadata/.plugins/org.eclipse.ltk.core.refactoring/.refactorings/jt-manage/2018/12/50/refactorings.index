@@ -1,0 +1,29 @@
+1544406906782	Extract local variable 'user'
+1544407002359	Extract local variable 'jedis'
+1544407136635	Extract local variable 'map'
+1544410740395	Extract local variable 'jedis'
+1544411414277	Extract local variable 'transaction'
+1544411588101	Extract local variable 'redis'
+1544413517284	Copy file
+1544413725927	Copy file
+1544421825143	Extract local variable 'user'
+1544421965822	Extract local variable 'mapper'
+1544422016968	Extract local variable 'result'
+1544422222770	Extract local variable 'mapper'
+1544422351418	Extract local variable 'result'
+1544422597743	Extract local variable 'objUser'
+1544422816068	Extract local variable 'uList'
+1544423022873	Extract local variable 'users'
+1544427865728	Extract local variable 'shardedJedis'
+1544431817031	Extract local variable 'shardedJedis'
+1544431891371	Extract local variable 'poolConfig'
+1544516121765	Extract local variable 'pool'
+1544516167624	Extract local variable 'poolConfig'
+1544516447982	Extract local variable 'jedis'
+1544586302441	Extract local variable 'cluster'
+1544596700779	Delete element
+1544603381124	Copy folders
+1544686117640	Copy elements
+1544686165703	Copy file
+1544701170076	Rename resource 'log4j.properties'
+1544751649618	Delete element

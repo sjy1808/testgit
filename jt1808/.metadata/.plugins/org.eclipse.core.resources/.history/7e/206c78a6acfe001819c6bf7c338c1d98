@@ -1,0 +1,5 @@
+package com.jt.sso.manage.controller;
+
+public class UserController {
+
+}

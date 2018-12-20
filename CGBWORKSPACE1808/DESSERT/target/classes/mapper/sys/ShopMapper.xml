@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dessert.sys.dao.ShopcartDao">
+	<insert id="addCart" parameterType="com.dessert.sys.orders.entity.Shopcart">
+		insert into shopcart(id,name,username,price,category,number,imagesurl,totalprice)
+		 values(null,#{name},#{username},#{price},#{category},#{number},#{imagesurl},#{totalprice})
+	</insert>
+  	<update id="updateCart">
+  		update shopcart set number=#{number},totalprice=#{totalprice} where name=#{name}
+  	</update>
+  	<select id="findShopcart" resultType="Integer">
+  		select number from shopcart where name=#{name} and username=#{username}
+  	</select>
+  	<select id="findShopcarts" resultType="com.dessert.sys.orders.entity.Shopcart">
+  		select * from shopcart where username=#{username}
+  	</select>
+  	<delete id="deleteCarts">
+  		delete from shopcart where username=#{username}
+  	</delete>
+</mapper>
+
+
+

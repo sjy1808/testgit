@@ -1,0 +1,16 @@
+1542608705430	Copy file
+1542612451759	Extract local variable 'subject'
+1542612502608	Extract local variable 'token'
+1542615302502	Extract local variable 'hcm'
+1542618478427	Extract local variable 'r'
+1542678015466	Extract local variable 'user'
+1542680765480	Extract local variable 'roleIds'
+1542680987548	Extract local variable 'menuIds'
+1542681133229	Extract local variable 'Permissions'
+1542768750683	Extract local variable 's'
+1542771264516	Extract local variable 'args'
+1542772460293	Extract local variable 'requiresLog'
+1542772697832	Extract local variable 'user'
+1542860106870	Copy files
+1542860435146	Copy file
+1542890292273	Copy compilation unit

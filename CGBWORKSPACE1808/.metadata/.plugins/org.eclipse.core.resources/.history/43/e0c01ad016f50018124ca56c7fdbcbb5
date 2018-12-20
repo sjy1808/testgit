@@ -1,0 +1,9 @@
+package cgb.test;
+
+public class Demo {
+
+	Boolean[] a=new Boolean[5];
+	public static void main(String[] args) {
+		
+	}
+}

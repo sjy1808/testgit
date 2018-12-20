@@ -1,0 +1,224 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">商品管理</h3>
+
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 350px;">
+						<input type="text" name="table_search" id="searchNameId"
+							class="form-control pull-right" placeholder="角色名">
+
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default btn-search">
+								<i class="fa fa-search"></i>
+							</button>
+							<button type="button" class="btn btn-default btn-add">添加</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<form>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>商品名称</th>
+								<th>商品单价</th>
+								<th>商品类型</th>
+								<th>图片地址</th>
+
+
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="tbodyId">
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<!-- /.box-body -->
+			<div id="pageId" class="box-footer clearfix"></div>
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+<script type="text/javascript" src="bower_components/layer/layer.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#pageId").load("doPageUI.do", function() {
+			//异步加载服务端数据然后进行呈现
+			doGetObjects();
+
+		});
+		$(".input-group-btn").on("click", ".btn-add", doLoadEditUI).on("click",
+				".btn-search", doQueryObjects)
+
+		$("#tbodyId").on("click", ".btn-delete", doDeleteObject).on("click",
+				".btn-update", doLoadEditUI);
+	})
+
+	function doQueryObjects() {
+		//为什么要在此位置初始化pageCurrent的值为1?
+		//数据查询时页码的初始位置也应该是第一页
+		//debugger
+		var pageCurrent = $("#pageId").data("pageCurrent", 1);
+		console.log("pageCurrent", pageCurrent);
+		//为什么要调用doGetObjects函数？
+		//重用js代码，简化jS代码编写。
+		doGetObjects();
+	}
+
+	//异步加载编辑页面
+	function doLoadEditUI() {
+		var title;
+		if ($(this).hasClass('btn-add')) {
+			title = "添加角色";
+			doLoadPageUI(title);
+		} else {
+			title = "修改角色"
+			var id = $(this).parents("tr").data("id");
+			var params = {
+				"id" : id
+			};
+			//console.log("id=",id)
+			var url = "goods/doFindObjectById.do";
+			$.getJSON(url, params, function(result) {
+				if (result.state == 1) {
+					console.log("id=", result.data)
+					$("#mainContentId").data("data", result.data);
+					doLoadPageUI(title);//异步加载页面  
+				} else {
+					layer.alert(result.message);
+				}
+			});
+
+		}
+	}
+
+	function doLoadPageUI(title) {
+		$("#mainContentId").load("goods/doGoodsEditUI.do", function() {
+			$(".box-title").html(title);
+		});
+	}
+
+	function doGetObjects() {
+		//console.log(1)
+		var url = "goods/dofindPageObjects.do";
+		//? 请问data函数的含义是什么？(从指定元素上获取绑定的数据)
+		//此数据会在何时进行绑定？(setPagination,doQueryObjects)
+		var pageCurrent = $("#pageId").data("pageCurrent");
+		if (!pageCurrent)
+			pageCurrent = 1;
+		console.log("pageCurrent", pageCurrent)
+		//为什么要执行如下语句的判定，然后初始化pageCurrent的值为1
+		//pageCurrent参数在没有赋值的情况下，默认初始值应该为1.
+
+		var params = {
+			"pageCurrent" : pageCurrent
+		};
+		//让此函数正在查询时可用
+		var name = $("#searchNameId").val();
+		if (name)
+			params.name = name;//查询时需要
+		console.log(name);
+		//2.发起异步请求
+		//请问如下ajax请求的回调函数参数名可以是任意吗？可以,必须符合标识符的规范
+		$.getJSON(url, params, function(result) {
+			// console.log(result.data)
+			//JsonResult->PageObject->List<SysConfigs>+...
+			//请问result是一个字符串还是json格式的js对象？对象
+			console.log(result);
+			doHandleResponseResult(result);
+		});
+	}
+	function doHandleResponseResult(result) {
+
+		if (result.state == 1) {
+			doSetTableBodyRows(result.data.records);
+			doSetPagination(result.data);
+		} else {
+			doSetTableBodyErrors(result.message);
+		}
+	}
+	function doSetTableBodyRows(goods) {
+		//1.获取tbody对象，并清空对象
+		var tBody = $("#tbodyId");
+		tBody.empty();
+		//2.迭代records记录，并将其内容追加到tbody
+		for ( var i in goods) {
+			//2.1 构建tr对象
+			var tr = $("<tr></tr>");
+			//将id放入tr中
+			tr.data("id", goods[i].id);
+			//2.2 构建tds对象
+			var tds = doCreatedTds(goods[i], i);
+			//2.3 将tds追加到tr中
+			tr.append(tds);
+			//2.4 将tr追加到tbody中
+			tBody.append(tr);
+		}
+	}
+
+	function doCreatedTds(row, i) {
+		var tds = "<td>" + (parseInt(i) + 1) + "</td>" + "<td>" + row.name
+				+ "</td>" + "<td>" + row.price + "</td>" + "<td>"
+				+ row.category + "</td>" + "<td>" + row.image + "</td>"
+				+ "<td><a class='btn-delete'>delete</a>"
+				+ "&nbsp;<a class='btn-update'>update</a></td>";
+		return tds;
+	}
+
+	function doSetTableBodyErrors(message) {
+		//获取body对象并清空
+		var tBody = $("#tbodyId");
+		tBody.empty();
+		//创建tr对象
+		var tr = $("<tr></tr>");
+		//创建td对象
+		//var len=$("table thead").find("tr").find("th").length;
+		var len = $("table th").length;
+		var td = $("<td></td>");
+		td.prop("colspan", len);
+		td.append(message);
+		tr.append(td);
+		//将tr追加到tbody
+		tBody.append(tr);
+	}
+	function doDeleteObject() {
+
+		//1.获取选中的值(分页显示记录时在tr上要绑定id的值)	   	 
+		var id = $(this).parents("tr").data("id");
+		//2.构建参数对象
+		var params = {
+			"id" : id
+		};
+		console.log(params);
+		//1确认是否删除
+		if (!confirm("确认删除吗"))
+			return;
+		//3.异步请求执行删除
+		var url = "goods/doDeleteObject.do";
+		$.post(url, params, function(result) {
+			if (result.state == 1) {
+				layer.alert(result.message);
+				doGetObjects();
+			} else {
+				layer.alert(result.message);
+			}
+		})
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+

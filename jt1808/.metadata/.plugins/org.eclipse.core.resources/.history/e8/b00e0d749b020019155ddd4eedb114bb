@@ -1,0 +1,28 @@
+package com.jt.web.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.jt.common.po.Cart;
+import com.jt.web.service.CartService;
+import com.jt.web.thread.UserThreadLocal;
+
+@Controller
+@RequestMapping("/order")
+public class OrderController {
+
+	@Autowired
+	private CartService cartService;
+	//实现订单确认页面的跳转
+	@RequestMapping("/create")
+	public String create(Model model){
+		Long userId=UserThreadLocal.get().getId();
+		List<Cart> carts=cartService.findCartByUserId(userId);
+		model.addAttribute("carts", carts);
+		return "order-cart";
+	}
+}

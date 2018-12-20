@@ -1,0 +1,7 @@
+1543027832269	Encapsulate field 'deptName'
+1543029383188	Encapsulate field 'deptName'
+1543048752369	Extract local variable 'employee'
+1543050057850	Copy file
+1543051197943	Delete element
+1543051437756	Extract local variable 'hcm'
+1543052971473	Extract local variable 'token'

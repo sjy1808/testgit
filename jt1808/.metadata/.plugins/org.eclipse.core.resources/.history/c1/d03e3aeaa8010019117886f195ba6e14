@@ -1,0 +1,13 @@
+package com.jt.cart.manage.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.jt.cart.manage.mapper.CartMapper;
+
+@Controller
+public class CartController {
+
+	@Autowired
+	private CartMapper cartMapper;
+}

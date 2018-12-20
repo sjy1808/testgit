@@ -1,0 +1,11 @@
+package com.jt.sso.manage.mapper;
+
+import com.jt.common.mapper.SysMapper;
+import com.jt.common.po.User;
+
+public interface UserMapper extends SysMapper<User> {
+
+	int selectCount(String param, String column);
+
+	//暂时不维护,使用通用mapper
+}

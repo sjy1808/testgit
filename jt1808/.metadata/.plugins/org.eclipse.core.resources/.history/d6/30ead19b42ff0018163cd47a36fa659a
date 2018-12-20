@@ -1,0 +1,5 @@
+package com.jt.sso.manage.service;
+
+public interface UserService {
+
+}

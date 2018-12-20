@@ -1,0 +1,35 @@
+package com.jt.web.service.impl;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jt.common.po.Cart;
+import com.jt.common.service.HttpClientService;
+import com.jt.common.vo.SysResult;
+import com.jt.web.service.CartService;
+@Service
+public class CartServiceImpl implements CartService {
+
+	@Autowired
+	private HttpClientService httpClient;
+	private ObjectMapper objectMapper=new ObjectMapper();
+	@Override
+	public List<Cart> findCartByUserId(Long userId) {
+		//通过RESTFul风格进行数据交换
+		String url="http://cart.jt.com/cart/query/"+userId;
+		String sysJSON=httpClient.doGet(url);
+		//将json转化为SYSResult对象
+		try {
+			objectMapper.readValue(sysJSON, SysResult.class);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

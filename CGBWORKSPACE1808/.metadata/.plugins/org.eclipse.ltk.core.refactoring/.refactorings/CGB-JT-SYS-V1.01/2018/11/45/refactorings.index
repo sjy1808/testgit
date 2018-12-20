@@ -1,0 +1,14 @@
+1541643346017	Copy file
+1541643359165	Copy file
+1541643376398	Copy file
+1541649045125	Delete element
+1541649212939	Delete element
+1541657086479	Extract local variable 'dao'
+1541657180903	Extract local variable 'rowCount'
+1541660065930	Extract local variable 'list'
+1541727345384	Extract local variable 'records'
+1541729779762	Extract local variable 'logService'
+1541729963890	Extract local variable 'po'
+1541743895912	Extract local variable 'pageObject'
+1541753757048	Rename package 'com.jt.sys'
+1541754927469	Delete element

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pt.order.dao.OrderDao">
+	<select id="findPageObjects" resultMap="orderVo">
+		select * from t_orders	
+	</select>
+	<resultMap type="com.pt.order.vo.OrderVo" id="orderVo">
+		<association property="member"
+					column="memberId"
+					select="com.pt.member.dao.MemberDao.findById"></association>
+	</resultMap>
+	<select id="findPageObject"
+			resultType="com.pt.order.entity.Order">
+		select * from t_orders
+		order by ${column} ${type}
+	</select>
+	<insert id="insertObject"
+			parameterType="com.pt.order.entity.Order"
+			useGeneratedKeys="true"
+			keyProperty="id">
+		insert into t_orders
+		(code,memberId,goodsId,totalPrice,status,remark,createdTime)
+   		values    
+   		(#{code},#{memberId},#{goodsId},#{totalPrice},#{status},#{remark},
+		now())
+		
+	</insert>
+	<insert id="insertObjects"
+			parameterType="com.pt.order.entity.Order">
+			<selectKey keyProperty="id"
+						resultType="int"
+						order="AFTER">
+				select last_insert_id()
+			</selectKey>
+		insert into t_orders
+		(code,memberId,goodsId,totalPrice,status,remark,createdTime)
+   		values    
+   		(#{code},#{memberId},#{goodsId},#{totalPrice},#{status},#{remark},
+		now())
+	</insert>
+</mapper>

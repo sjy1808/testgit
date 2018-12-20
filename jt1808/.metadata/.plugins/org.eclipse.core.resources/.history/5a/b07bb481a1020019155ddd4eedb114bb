@@ -1,0 +1,19 @@
+package com.jt.order.manage.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.miemiedev.mybatis.paginator.domain.Order;
+import com.jt.order.manage.mapper.OrderMapper;
+import com.jt.order.manage.service.OrderService;
+@Service
+public class OrderServiceImpl implements OrderService{
+
+	@Autowired
+	private OrderMapper orderMapper;
+
+	@Override
+	public String saveOrder(Order order) {
+		return null;
+	}
+}

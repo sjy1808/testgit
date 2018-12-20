@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;helloService&apos; from expression &apos;ctx.getBean(&quot;helloService&quot;,HelloSerivce.class)&apos;&#x0D;&#x0A;- Original project: &apos;HomeworkSpringMVC02&apos;&#x0D;&#x0A;- Variable name: &apos;helloService&apos;&#x0D;&#x0A;- Destination method: &apos;com.pt.aspect.TestAOP01.testSayHello()&apos;&#x0D;&#x0A;- Variable expression: &apos;ctx.getBean(&quot;helloService&quot;,HelloSerivce.class)&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;helloService&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/main\/java&lt;com.pt.aspect{TestAOP01.java" name="helloService" replace="true" selection="402 0" stamp="1542804046066" version="1.0"/>
+</session>

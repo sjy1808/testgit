@@ -1,0 +1,19 @@
+package com.jt.common.service;
+
+
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class HttpClientService {
+
+    @Autowired(required=false)
+    private CloseableHttpClient httpClient;
+
+    @Autowired(required=false)
+    private RequestConfig requestConfig;
+
+
+}

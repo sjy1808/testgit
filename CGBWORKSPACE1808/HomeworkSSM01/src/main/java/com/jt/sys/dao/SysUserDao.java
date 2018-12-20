@@ -1,0 +1,10 @@
+package com.jt.sys.dao;
+
+public interface SysUserDao {
+
+	/**
+	 * 基于id查询这个部门有多少个员工
+	 * @return
+	 */
+	int getUserCountByDeptId(Integer DeptId);
+}

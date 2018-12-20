@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SysDept.java&apos; to &apos;HomeworkSSM01/src/main/java/com.jt.sys.entity&apos;&#x0D;&#x0A;- Original project: &apos;CGB-JT-SYS-V1.01&apos;&#x0D;&#x0A;- Destination element: &apos;HomeworkSSM01/src/main/java/com.jt.sys.entity&apos;&#x0D;&#x0A;- Original element: &apos;com.jt.sys.entity.SysDept.java&apos;" description="Copy compilation unit" destination="=HomeworkSSM01/src\/main\/java&lt;com.jt.sys.entity" element1="/src\/main\/java&lt;com.jt.sys.entity{SysDept.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1543322464410" units="1" version="1.0"/>
+</session>

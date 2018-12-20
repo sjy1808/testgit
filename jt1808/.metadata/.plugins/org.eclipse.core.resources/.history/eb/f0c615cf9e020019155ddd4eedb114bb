@@ -1,0 +1,36 @@
+package com.jt.web.service.impl;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jt.common.po.Order;
+import com.jt.common.service.HttpClientService;
+import com.jt.web.service.OrderService;
+@Service
+public class OrderServiceImpl implements OrderService {
+
+	@Autowired
+	private HttpClientService httpClient;
+	
+	private ObjectMapper objectMapper=new ObjectMapper();
+	@Override
+	public String saveOrder(Order order) {
+		String url="http://order.jt.com/order/create";
+		String orderId=null;
+		try {
+			//将order对象转化为orderJSON数据
+			String orderJSON=objectMapper.writeValueAsString(order);
+			Map<String,String> params=new HashMap<>();
+			params.put("orderJSON", orderJSON);
+			httpClient.doPost(url,params);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return orderId;
+	}
+
+}

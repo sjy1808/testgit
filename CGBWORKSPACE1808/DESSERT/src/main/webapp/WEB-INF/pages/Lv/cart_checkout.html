@@ -1,0 +1,262 @@
+ 
+    <div class="content-box">
+        <form action="index.html" method="post" id="cart-submit-detail-form">
+            <!-- 配送信息 -->
+            <div class="delivery-info">
+                <h3 class="delivery-info-title">配送信息</h3>
+                <div id="address-info-content" class="delivery-info-content">
+                    <div  class="cart-address-button" style="float: left;"><i></i>添加新的地址  <input type="text"></div>
+
+                    <div class="delivery-time">
+                        <span>配送时间</span>
+                        <input type="text" name="ship_date" id="ship-date" autocomplete="off" placeholder="请选择配送日期" />
+                        <select name="ship_time_scope" id="ship-time-scop">
+                            <option>时间</option>
+                        </select>
+
+                                                    <span>配送时间有前后15分钟误差，奉贤地区10:40～16:30时段内配送</span>
+                                            </div>
+                    <div class="delivery-mode">
+                        <span>配送方式</span>
+                        <label><input type="radio" name="shipping_id" value="1" id="action-delivery-dispatch" checked="checked">&nbsp;21cake配送</label>
+                        <label><input type="radio" name="shipping_id" value="2" id="action-delivery-self-pick">&nbsp;站点自提<span id="self-pick-address"></span></label>
+                        <input type="hidden" name="distribution_id" id="distribution_id"/>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- 商品信息 -->
+            <div class="cart-goods-info">
+    <ul class="thead-ul">
+        <li class="goods-ti">商品</li>
+        <li class="birthday-card-ti">生日牌</li>
+        <li class="unit-Price">单价</li>
+        <li class="number-ti">数量</li>
+        <li class="money-ti" colspan="2">金额</li>
+    </ul>
+    <div class="tbody-ul">
+        <table class="cart-detail">
+            <tbody>
+                                                                                                        <tr id="goods_12_377" data-name="377">
+                        <td class="goods-img">
+                            <a href="/product-377.html" target="_blank">
+                                <img src="./images/home/ed/beca3830c4ef40b0025279f737b1f644.jpg"/>
+                            </a>
+                        </td>
+                        <td class="goods-cake">
+                            <div>
+                                <h4>
+                                    <a href="/product-377.html" target="_blank">
+                                        Bailey&#039;s Love Triangle  百利甜情人                                    </a>
+                                </h4>
+                                
+                                <span class="goods-spec">规格：<span>2.0磅</span></span>
+                                                                    <span class="goods-laid"><i></i>赠送10套餐具</span>
+                                                            </div>
+                        </td>
+                        <td>
+                            <div class="select-birthday">
+                                                            </div>
+                        </td>
+                        <td class="cart-unit-Price">¥298.00</td>
+                        <td class="number-li">
+                            1                        </td>
+                        <td class="money">
+                            ¥298.00</td>
+                        <td class="delete"></td>
+                    </tr>
+                                                    </tbody>
+        </table>
+    </div>
+</div>
+            <!-- 订单留言 -->
+            <div class="leave-message">
+                <label>订单留言：</label><textarea name="memo" id="action-add-memo" maxlength="200" placeholder="请留下您对订单或商品的特殊要求，200字以内"></textarea>
+            </div>
+            <div class="select-coupons-info">
+                <div class="action-add-invoice">
+                  <!--  <label class="invoice" id="action-add-invoice">发票<input type="checkbox" id="input-invoice"></label><label><span id="invoice-text"></span></label>-->
+              <!--  <input name="invoice" type="hidden" value="0" id="invoice-checkout">
+                        <div class="invoice-show" style="display: none">
+                            <div class="invoice-show-title">
+                                    <a herf="#" class="active electronic-invoice invoice-title" >电子发票</a>
+                                    <a href="/doc-help-98.html" target="_blank" class="what-invoice" >什么是电子发票？</a>
+                                <span>更多&gt;&gt;</span>
+                            </div>
+                            <div id="companyPersonal">
+                                <label><input type="radio" name="tax_type" value="company" checked>公司发票</label>
+                                <label><input type="radio" name="tax_type" value="personal">个人发票</label>
+                            </div>
+                            <div id="electronic-invoice" class="rise-show">
+                                <input type="hidden" name="invoice_type" id="input-invoice_type" value="electronic" >
+                                <input type="text" name="invoice_code" id="input-invoice-code" value="" placeholder="纳税人识别号或统一社会信用代码(必填)">
+                                <input type="text" name="invoice_title" id="input-invoice-title" value="" placeholder="发票抬头(必填)">
+                                <input type="text" name="invoice_mobile" id="input-invoice-mobile" value="" placeholder="收票人手机(必填)">
+                                <input type="text" name="invoice_email" id="input-invoice-email" value="" placeholder="收票人邮箱">  -->
+                                <select name="invoice_content" id="input-invoice-content">
+                                    <option value="蛋糕">蛋糕</option>
+                                    <option value="冰淇淋">冰淇淋</option>
+                                    <option value="咖啡">咖啡</option>
+                                </select>
+                                
+                            </div>
+
+                            <!--<label><input type="radio" name="invoice_type" value="company">公司发票</label>-->
+                            <!--<label><input type="radio" name="invoice_type" value="personal">个人发票</label>-->
+                            <!--<div class="rise-show">-->
+                            <!--<input type="text" name="invoice_title" placeholder="发票抬头" id="input-invoice-title">-->
+                            <!--<select name="invoice_content" id="input-invoice-content">-->
+                            <!--<option value="食品" selected>食品</option>-->
+                            <!--<option value="蛋糕">蛋糕</option>-->
+                            <!--</select>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+
+            <div class="payment-info">
+                <div class="left-pay">
+                    <h3>支付方式</h3>
+                    <input type="hidden" name="payment[pay_app_id]" id="pay_app_id"/>
+                    <input type="hidden" name="payment[payment_name]" id="payment_name"/>
+                    <input type="hidden" name="payment[cod_pay_type]" id="cod_pay_type"/>
+                    <ul class="pay-ways" id="payments-list">
+                                                                                <li >
+                                <a href="#" class="payment-item" data-app_id="alipay" data-cod_pay_type="0" data-app_name="在线支付">在线支付</a>
+                            </li>
+                                                                                                                                                                                    <!-- <li><a href="#" class="pay-ways-more">更多&gt;&gt;</a></li> -->
+                    </ul>
+
+                </div>
+
+                <div class="right-pay">
+                    <div class="pay-unmber" id="total-amount-detail">
+                        <ul>
+                            <li><span>商品金额</span><span> - </span></li>
+                            <li><span>配送费</span><span> - </span></li>
+
+                        </ul>
+                    </div>
+                    <div class="total-amount">
+                        您总共需要支付<span id="total-amount"> - </span>
+                    </div>
+                    
+                    <input type="submit" class="go-pay" name="go-pay" value="下单结算"/>
+                    <div id="user-info-confirm">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <i class="bomb-background" id="select-address-mask" style="display: none;"></i>
+
+    <style type="text/css">
+    #delivery-station-panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2147483648;
+        width: 100%;
+        display: none;
+    }
+</style>
+<i class="bomb-background" id="delivery-station-mask" style="display: none;"></i>
+<div id="delivery-station-panel">
+    <div class="bomb-box picked-up">
+        <div class="bomb-box-title">
+            <h4>选择自提点</h4>
+            <i id="close-delivery-station-panel-icon"></i>
+        </div>
+        <div class="bomb-box-content">
+            <div class="right-bomb-cont">
+                <div class="coupons-cont picked-up-cont">
+                    <ul id="delivery-station-list">
+                                                    <li>
+                                <a href="#" class="station-item" data-id="1">
+                                    <div class="picked-up-left">
+                                        <h6>21号站</h6>
+                                        <span>021-64868152</span>
+                                    </div>
+                                    <div class="picked-up-right">
+                                        <span>徐汇区</span>
+                                        <span>上海市徐汇区零陵路35号，靠近茶陵路</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="#" class="station-item" data-id="3">
+                                    <div class="picked-up-left">
+                                        <h6>23号站</h6>
+                                        <span></span>
+                                    </div>
+                                    <div class="picked-up-right">
+                                        <span>长宁区</span>
+                                        <span>上海市普陀区千阳南路9号  联系电话18301968180</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="#" class="station-item" data-id="4">
+                                    <div class="picked-up-left">
+                                        <h6>24号站</h6>
+                                        <span>刘全全15900495382</span>
+                                    </div>
+                                    <div class="picked-up-right">
+                                        <span>宝山区</span>
+                                        <span>上海市宝山区大场镇环镇北路1106号</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="#" class="station-item" data-id="6">
+                                    <div class="picked-up-left">
+                                        <h6>26号站</h6>
+                                        <span>021-35311899</span>
+                                    </div>
+                                    <div class="picked-up-right">
+                                        <span>杨浦区</span>
+                                        <span>上海市杨浦区江浦路2141-2147号，靠近中山北路</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="#" class="station-item" data-id="41">
+                                    <div class="picked-up-left">
+                                        <h6>19号站</h6>
+                                        <span>18621058681</span>
+                                    </div>
+                                    <div class="picked-up-right">
+                                        <span>松江区</span>
+                                        <span>上海市松江区新桥镇新效支路518</span>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="#" class="station-item" data-id="49">
+                                    <div class="picked-up-left">
+                                        <h6>工厂站</h6>
+                                        <span></span>
+                                    </div>
+                                    <div class="picked-up-right">
+                                        <span></span>
+                                        <span>新效支路518号</span>
+                                    </div>
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                <div class="use-button">
+                    <a href="#" id="delivery-station-confirm-btn">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<i class="bomb-background" id="coupon-list-mask"></i>
+<div id="coupon-list-panel" style="position: absolute;"></div>
+ 

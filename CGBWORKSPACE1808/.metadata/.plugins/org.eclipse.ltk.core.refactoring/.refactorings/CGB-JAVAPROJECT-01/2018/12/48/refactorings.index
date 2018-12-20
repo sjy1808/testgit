@@ -1,0 +1,7 @@
+1543629933230	Extract local variable 'file'
+1543630121965	Extract local variable 'fileReader'
+1543630173338	Extract local variable 'br'
+1543630260302	Extract local variable 'line'
+1543630385017	Extract local variable 'bytes'
+1543631084312	Extract local variable 's'
+1543631220648	Extract local variable 'bw'

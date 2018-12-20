@@ -1,0 +1,12 @@
+package com.jt.common.po;
+
+public class Cart {
+
+	private Long id;
+	private Long userId;//用户id
+	private Long itemId;//商品id
+	private String itemTitle;//商品标题
+	private String itemImage;//商品图片1张
+	private Long itemPrice;//商品价格
+	private Integer num;//商品数量
+}

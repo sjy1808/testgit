@@ -1,0 +1,23 @@
+1542860327674	Delete element
+1542860387578	Rename resource 'sys'
+1542860512428	Rename resource 'SysUserMapper.xml'
+1542869322047	Rename package 'com.dessert.sys.common'
+1542869353394	Rename package 'com.dessert.sys.vo'
+1542869456980	Move compilation unit
+1542869783884	Extract local variable 'pageObject'
+1542869984138	Rename package 'com.dessert.sys'
+1542869997085	Rename package 'com.dessert.sys'
+1542870136882	Delete element
+1542870154111	Rename package 'com.dessert.sys'
+1542870248657	Copy package
+1542870277208	Delete element
+1542870328917	Rename package 'com.dessert.dao'
+1542870346990	Rename package 'com.dessert.service'
+1542870361515	Rename package 'com.dessert.entity'
+1542872306161	Extract local variable 'pageObject'
+1542881780633	Delete element
+1542883154128	Rename resource 'user_list.html'
+1542892070312	Rename resource 'user_edit.html'
+1542954283595	Extract local variable 'object'
+1542954713874	Extract local variable 'object'
+1542974369261	Delete element

@@ -1,0 +1,7 @@
+package com.jt.order.manage.mapper;
+
+import com.jt.common.po.Order;
+
+public interface OrderMapper {
+    
+}

@@ -1,0 +1,5 @@
+package com.jt.sso.manage.mapper;
+
+public interface UserMapper {
+
+}

@@ -1,0 +1,5 @@
+package com.jt.order.manage.service;
+
+public interface OrderService {
+
+}

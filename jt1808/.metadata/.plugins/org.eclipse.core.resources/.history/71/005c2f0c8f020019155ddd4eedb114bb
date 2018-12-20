@@ -1,0 +1,375 @@
+package com.jt.common.po;
+
+import java.util.Date;
+
+public class Order {
+    private String orderId;
+
+	private String receiverName;
+
+	private String receiverPhone;
+
+	private String receiverMobile;
+
+	private String receiverState;
+
+	private String receiverCity;
+
+	private String receiverDistrict;
+
+	private String receiverAddress;
+
+	private String receiverZip;
+
+	private Date created;
+
+	private Date updated;
+
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getReceiverName() {
+		return receiverName;
+	}
+
+	public void setReceiverName(String receiverName) {
+		this.receiverName = receiverName;
+	}
+
+	public String getReceiverPhone() {
+		return receiverPhone;
+	}
+
+	public void setReceiverPhone(String receiverPhone) {
+		this.receiverPhone = receiverPhone;
+	}
+
+	public String getReceiverMobile() {
+		return receiverMobile;
+	}
+
+	public void setReceiverMobile(String receiverMobile) {
+		this.receiverMobile = receiverMobile;
+	}
+
+	public String getReceiverState() {
+		return receiverState;
+	}
+
+	public void setReceiverState(String receiverState) {
+		this.receiverState = receiverState;
+	}
+
+	public String getReceiverCity() {
+		return receiverCity;
+	}
+
+	public void setReceiverCity(String receiverCity) {
+		this.receiverCity = receiverCity;
+	}
+
+	public String getReceiverDistrict() {
+		return receiverDistrict;
+	}
+
+	public void setReceiverDistrict(String receiverDistrict) {
+		this.receiverDistrict = receiverDistrict;
+	}
+
+	public String getReceiverAddress() {
+		return receiverAddress;
+	}
+
+	public void setReceiverAddress(String receiverAddress) {
+		this.receiverAddress = receiverAddress;
+	}
+
+	public String getReceiverZip() {
+		return receiverZip;
+	}
+
+	public void setReceiverZip(String receiverZip) {
+		this.receiverZip = receiverZip;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+
+	private String itemId;
+
+	private String orderId;
+
+	private Integer num;
+
+	private String title;
+
+	private Long price;
+
+	private Long totalFee;
+
+	private String picPath;
+
+	private Date created;
+
+	private Date updated;
+
+	public String getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
+	public Long getTotalFee() {
+		return totalFee;
+	}
+
+	public void setTotalFee(Long totalFee) {
+		this.totalFee = totalFee;
+	}
+
+	public String getPicPath() {
+		return picPath;
+	}
+
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+
+	private String orderId;
+
+    private String payment;
+
+    private Integer paymentType;
+
+    private String postFee;
+
+    private Integer status;
+
+    private Date created;
+
+    private Date updated;
+
+    private Date paymentTime;
+
+    private Date consignTime;
+
+    private Date endTime;
+
+    private Date closeTime;
+
+    private String shippingName;
+
+    private String shippingCode;
+
+    private Long userId;
+
+    private String buyerMessage;
+
+    private String buyerNick;
+
+    private Integer buyerRate;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public Integer getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(Integer paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public String getPostFee() {
+        return postFee;
+    }
+
+    public void setPostFee(String postFee) {
+        this.postFee = postFee;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public Date getPaymentTime() {
+        return paymentTime;
+    }
+
+    public void setPaymentTime(Date paymentTime) {
+        this.paymentTime = paymentTime;
+    }
+
+    public Date getConsignTime() {
+        return consignTime;
+    }
+
+    public void setConsignTime(Date consignTime) {
+        this.consignTime = consignTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public Date getCloseTime() {
+        return closeTime;
+    }
+
+    public void setCloseTime(Date closeTime) {
+        this.closeTime = closeTime;
+    }
+
+    public String getShippingName() {
+        return shippingName;
+    }
+
+    public void setShippingName(String shippingName) {
+        this.shippingName = shippingName;
+    }
+
+    public String getShippingCode() {
+        return shippingCode;
+    }
+
+    public void setShippingCode(String shippingCode) {
+        this.shippingCode = shippingCode;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getBuyerMessage() {
+        return buyerMessage;
+    }
+
+    public void setBuyerMessage(String buyerMessage) {
+        this.buyerMessage = buyerMessage;
+    }
+
+    public String getBuyerNick() {
+        return buyerNick;
+    }
+
+    public void setBuyerNick(String buyerNick) {
+        this.buyerNick = buyerNick;
+    }
+
+    public Integer getBuyerRate() {
+        return buyerRate;
+    }
+
+    public void setBuyerRate(Integer buyerRate) {
+        this.buyerRate = buyerRate;
+    }
+}

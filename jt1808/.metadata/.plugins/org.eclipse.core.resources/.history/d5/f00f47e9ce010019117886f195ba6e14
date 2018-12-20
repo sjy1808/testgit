@@ -1,0 +1,38 @@
+package com.jt.cart.manage.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jt.cart.manage.mapper.CartMapper;
+import com.jt.cart.manage.service.CartService;
+import com.jt.common.po.Cart;
+@Service
+public class CartServiceImpl implements CartService {
+
+	@Autowired
+	private CartMapper cartMapper;
+
+	@Override
+	public List<Cart> findCartByUserId(Long userId) {
+		Cart cart=new Cart();
+		cart.setUserId(userId);
+		List<Cart> listCard=cartMapper.select(cart);
+		return listCard;
+	}
+
+	//能否使用通用Mapper实现                不能  因为没有主键
+	@Override
+	public void updateNumber(Cart cart) {
+		cart.setUpdated(new Date());
+		cartMapper.updateNum(cart);
+	}
+
+	@Override
+	public void deleteCart(Cart cart) {
+		// TODO Auto-generated method stub
+		
+	}
+}

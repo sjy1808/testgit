@@ -1,0 +1,16 @@
+package com.jt.sys.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import com.jt.sys.service.SysDeptService;
+
+public class SysDeptServiceImpl implements SysDeptService {
+
+	@Override
+	public List<Map<String, Object>> findObjects() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

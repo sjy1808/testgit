@@ -1,0 +1,23 @@
+1542160289332	Copy file
+1542176649597	Copy file
+1542177573050	Extract local variable 'menu'
+1542177614601	Extract local variable 'rows'
+1542186403860	Extract local variable 'list'
+1542200710002	Copy folders
+1542200815699	Copy elements
+1542248924113	Extract local variable 'rows'
+1542276096969	Copy file
+1542280857394	Extract local variable 'list'
+1542280902179	Extract local variable 'pageObject'
+1542330843305	Copy file
+1542336989000	Rename package 'com.jt.sys'
+1542339348099	Extract local variable 'srVo'
+1542339880495	Extract local variable 'srVo'
+1542355027726	Copy file
+1542355123864	Copy compilation unit
+1542356502429	Copy compilation unit
+1542366768954	Extract local variable 'checkbox'
+1542371294148	Extract local variable 'sHash'
+1542415611714	Extract local variable 'user'
+1542416222148	Extract local variable 'map'
+1542422011902	Extract local variable 'user'

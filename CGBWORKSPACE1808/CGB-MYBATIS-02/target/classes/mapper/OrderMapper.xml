@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pt.order.dao.OrderDao">
+	<!-- 查询订单时将订单对应的会员信息也查询出来 -->
+	<select id="findPageObjects"
+			parameterType="com.pt.order.vo.SqlOrderCommand"
+            resultMap="orderVo">
+         select * 
+         from t_orders
+         order by ${column} ${type}
+	</select>
+	<resultMap type="com.pt.order.vo.OrderVo" id="orderVo">
+		<!-- 关联映射(基于memeberId查询会员信息,并将其封装到OrderVo对应的Member属性) 
+		fetchType:懒加载-->
+		<association property="member"
+					column="memberId"
+					select="com.pt.member.dao.MemberDao.findById"
+					fetchType="lazy">
+		</association>
+	</resultMap>
+	<!--  
+	<insert id="insertObject"
+			parameterType="com.pt.order.entity.Order"
+			useGeneratedKeys="true"
+			keyProperty="id">
+			useGeneratedKeys属性使用自增长的主键id值,
+			keyProperty属性用于指定参数中的id属性,成功写入后将获取的主键值赋值给此属性 
+		insert into t_orders
+   		(code,memberId,goodsId,totalprice,status,remark,createdTime)
+   		values    
+   		(#{code},#{memberId},#{goodsId},#{totalprice},#{status},#{remark},
+		now())
+	
+	</insert>-->
+	
+	<insert id="insertObject"
+			parameterType="com.pt.order.entity.Order">
+		<selectKey keyProperty="id"
+				   resultType="int"
+				   order="AFTER">
+			select last_insert_id()
+		</selectKey>
+			<!--useGeneratedKeys属性使用自增长的主键id值,
+			keyProperty属性用于指定参数中的id属性,成功写入后将获取的主键值赋值给此属性 -->
+		insert into t_orders
+   		(code,memberId,goodsId,totalprice,status,remark,createdTime)
+   		values    
+   		(#{code},#{memberId},#{goodsId},#{totalprice},#{status},#{remark},
+		now())
+	
+	</insert>
+	<!-- 基于订单id删除订单元素 -->
+	<delete id="deleteObject">
+		delete from t_orders
+		where id=#{id}
+	</delete>
+	
+	<delete id="deleteObjectByIds">
+		delete from t_orders
+		<where>
+			<if test="ids==null or ids.length==0">
+				id is null
+			</if>
+			<if test="ids!=null and ids.length>0">
+				id in
+				<foreach collection="ids"
+						open="("
+						close=")"
+						separator=","
+						item="item">
+						#{item}
+				</foreach>
+			</if>
+		</where>
+	</delete>
+
+</mapper>

@@ -1,0 +1,15 @@
+package com.jt.jsoup.test;
+
+public class TestTmoocJsoup {
+
+	public void test01(){
+		//1.定义目标的网址
+		String url="http://www.tmooc.cn";
+		
+		//2.定位目标元素html标签
+		
+		
+		
+	}
+	
+}

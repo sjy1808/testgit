@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dessert.sys.dao.UserOrdersDao">
+	<delete id="deleteObjectsByUserId">
+		delete from user_orders where user_id=#{userId}
+	</delete>
+	<delete id="deleteObjectsByOrdersId">
+		delete from user_orders where orders_id in
+		<foreach collection="ids" open="(" close=")" separator=","
+			item="item">
+			#{item}
+		</foreach>
+	</delete>
+</mapper>

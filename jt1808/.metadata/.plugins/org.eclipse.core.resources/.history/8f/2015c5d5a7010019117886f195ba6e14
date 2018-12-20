@@ -1,0 +1,5 @@
+package com.jt.common.po;
+
+public class Cart {
+
+}

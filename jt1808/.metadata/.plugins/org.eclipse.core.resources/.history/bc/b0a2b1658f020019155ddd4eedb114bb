@@ -1,0 +1,9 @@
+package com.jt.order.manage.mapper;
+
+import com.jt.common.po.OrderItem;
+
+public interface OrderItemMapper {
+    int insert(OrderItem record);
+
+    int insertSelective(OrderItem record);
+}

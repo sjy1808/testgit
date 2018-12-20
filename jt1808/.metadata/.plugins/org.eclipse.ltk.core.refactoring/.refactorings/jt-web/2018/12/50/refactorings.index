@@ -1,0 +1,11 @@
+1544601833387	Delete element
+1544603385674	Delete element
+1544603397820	Delete element
+1544606064814	Extract local variable 'client'
+1544606168634	Extract local variable 'response'
+1544672475449	Extract local variable 'itemJSON'
+1544672652618	Extract local variable 'item'
+1544759653942	Extract local variable 'sysJSON'
+1544759869157	Extract local variable 'result'
+1544773203632	Extract local variable 'sysJSON'
+1544773302636	Extract local variable 'sysResult'

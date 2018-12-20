@@ -1,0 +1,103 @@
+<!-- 购物导航 -->
+<div class="login-background">
+	<!-- 中间内容 -->
+	<div class="content-box">
+		<div class="form-login-box">
+			<div class="login-regi-title">
+				<h2 class="active" data-id="form-content">账号密码登录</h2>
+
+			</div>
+			<script type="text/javascript">
+				var VERIFY_CODE_SALT = '221becbbcf3d1f93';
+			</script>
+			<!-- 账号密码登录 -->
+			<div class="form-content" id="form-content">
+				<form method="post" action="#" id="login-form">
+					<input type="hidden" name="ThqXiFEEoxeCmqILVkN3g"
+						value="5Z9DuPhx6aNCgCZtjGBiw" /> <input type="hidden"
+						name="redirectUrl" value="Lw==" />
+					<ul>
+						<li><input type="text" name="loginName" autofocus
+							placeholder="请输入您的账号" tabindex="1" id="usernameId" /></li>
+						<li><input type="password" name="password" maxlength="32"
+							placeholder="输入密码" id="passwordId" tabindex="2"></li>
+
+						<!-- 输入图片字符结束 -->
+						<li class="err-text"><span> <!-- <i></i>请输入账号和密码 -->
+						</span></li>
+						<li><input type="button" class="login-button" value="登录"></li>
+					</ul>
+					<div class="login-remember">
+						<label><input type="checkbox" name='rememberMe'
+							id="rememberMe" form="fast-login login-form" checked="checked">&nbsp;记住账号</label>
+
+					</div>
+				</form>
+			</div>
+
+
+			<div class="login-bottom-other">
+				<div></div>
+				<a href="javascript:void(0);" class="weixin-login"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(function() {
+		$("#form-content").on("click", ".login-button", doLogin);
+		doLoadUI("register", "register.do");
+	});
+	function doLogin() {
+		var params = {
+			username : $("#usernameId").val()
+		}
+		var url = "user/doFindObjectByUsername.do";
+		$.getJSON(url, params, function(result) {
+			console.log(result);
+			if (result.state == 1) {
+				console.log(result.data);
+
+				findObject(result.data, params);
+				/* location.href = "doIndex.do?t=" + Math.random(); */
+			} else {
+				alert(result.message);
+				$("#Content-all").load("login.do");
+			}
+			return false;//防止刷新时重复提交
+		});
+	}
+	function findObject(data, params) {
+
+		if (data.username == params.username) {
+			/* $("#Content-all").data("username", params.username);
+			console.log($("#Content-all").data("username")); */
+			$.cookie("username",params.username);
+			$("#Content-all").load("index.do");
+			/* location.href = "index.do?t=" + Math.random(); */
+		} else {
+			alert("用户名或密码错误");
+		}
+
+	}
+	function doLoadUI(id, url) {
+		//添加点击事件
+		$("#" + id).click(function() {
+			//在指定位置异步加载url，并将url返回的结果添加到指定位置
+			$(".form-content").load(url);
+		})
+	}
+
+	var bannerHeight = $(window).height() - 80;
+	var bannerWidth = $(window).width();
+	$('.login-background').css('height', bannerHeight);
+	if (bannerWidth <= 1400) {
+		$(".content-box").css('width', bannerWidth);
+		$('.form-login-box').css('right', '100px');
+	} else {
+		$(".content-box").css('width', '1200px');
+		$('.form-login-box').css('right', '0');
+	};
+</script>

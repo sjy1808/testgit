@@ -1,0 +1,54 @@
+package com.jt.web.service.impl;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jt.common.po.Order;
+import com.jt.common.service.HttpClientService;
+import com.jt.common.vo.SysResult;
+import com.jt.web.service.OrderService;
+@Service
+public class OrderServiceImpl implements OrderService {
+
+	@Autowired
+	private HttpClientService httpClient;
+	
+	private ObjectMapper objectMapper=new ObjectMapper();
+	@Override
+	public String saveOrder(Order order) {
+		String url="http://order.jt.com/order/create";
+		String orderId=null;
+		try {
+			//将order对象转化为orderJSON数据
+			String orderJSON=objectMapper.writeValueAsString(order);
+			Map<String,String> params=new HashMap<>();
+			params.put("orderJSON", orderJSON);
+			//发送入库请求
+			String sysJSON=httpClient.doPost(url,params);
+			SysResult sysResult = objectMapper.readValue(sysJSON, SysResult.class);
+			
+			//判断后台执行是否正确
+			if(sysResult.getStatus()==200){
+				orderId=(String) sysResult.getData();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return orderId;
+	}
+	@Override
+	public Order findOrderById(String id) {
+		String url="http://www.jt.com/order/success"+id;
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

@@ -1,0 +1,150 @@
+ 
+<!-- 全站公告结束 -->
+<div class="content-box">
+    <ul class="cart-sales cart-area">
+        <li>
+            <ul id="cart-events-box">
+            </ul>
+        </li>
+    </ul>
+        <!-- 商品信息 -->
+    <div class="cart-goods-info cart-area cart-list">
+        <ul class="thead-ul">
+            <li class="goods-ti">商品</li>
+            <li class="birthday-card-ti"></li>
+            <li class="unit-Price">单价</li>
+            <li class="number-ti">数量</li>
+            <li class="money-ti" colspan="2">金额</li>
+        </ul>
+        <div class="tbody-ul">
+            <table>
+                                
+				<td>
+				<div class="cart-not-pro">
+        <img src="./images/cartempty.png">
+        <span>您的购物车里还没有商品</span>
+        <a href="index.do">去购物 &gt;&gt;</a>
+    </div></td>
+                              	                                                                            
+                            </table>
+        </div>
+    </div>
+
+
+    <div class="cart-submit cart-area">
+        <a href="javacript:void(0)" class="cart-submit-empty"><i></i>全部清空</a>
+      
+        <div class="cart-total"><span>合计：¥<span class="totalprice">0.00</span></span></div>
+        <span class="cart-balance" id="cost-freight-tip"></span>
+        <div class="cart-submit-button"><a href="javascript:void(0)" name="action-submit-btn" id="action-submit-btn">去结算</a></div>
+    </div>
+    <!-- 下部banner -->
+    <div class="cart-banner cart-area"></div>
+    <!--  -->
+        <!-- 商品推荐 -->
+    <div class="details-recommend" style="display: none">
+        <h2>商品推荐</h2>
+        <ul class="recommend-list"></ul>
+    </div>
+    <!--  -->
+</div>
+<input type="hidden" name="limitGoodsNums" value="3">
+<input type="hidden" name="cakeNums" value="1">
+<input type="hidden" name="sceneAreaOpen" value="">
+<script>
+	$(function(){
+		 
+		doGetobjects();
+		$(".cart-area").on("click",".cart-submit-empty",deleteCarts);
+	})
+	
+	//清空购物车
+	function deleteCarts(){
+	 	var username="abc";
+	 	url ="cart/deleteCarts.do";
+	 	params={"username":username};
+	 	$.post(url,params,function(result){
+	 		alert(result.message);
+	 		/* $("table").html(""); 
+	 		$(".totalprice").html("0.00");  */
+	 	});
+	 	$("table").html("<td><div class='cart-not-pro'><img src='./images/cartempty.png'><span>您的购物车里还没有商品</span><a href='index.do'>去购物 &gt;&gt;</a></div></td>"); 
+ 		$(".totalprice").html("0.00"); 
+	}
+	function doGetobjects(){
+		var username="abc";
+		var url="cart/findcarts.do";
+		var params = {"username":username};
+		$.getJSON(url,params,function(result){
+		 
+			doHandleResponseResult(result);
+		});
+		function doHandleResponseResult(result){
+			   console.log("data",result.data)
+			   
+			   if(result.state==1){
+				  if(result.data[0]!=null)
+				  doSetTableBodyRows(result.data);
+				 
+				 
+			   }else{
+				  
+			   }
+		  
+		 }
+		 
+		 function doSetTableBodyRows(goods){
+			  var totalprice =0;
+			  
+			 //1.获取tbody对象，并清空对象
+			   var tBody=$(".tbody-ul table");
+			   tBody.empty();
+			   //2.迭代records记录，并将其内容追加到tbody
+			   for(var i in goods){
+				  var tr=$("<tr></tr>");
+				   tr.data("ct",goods[i]);
+				  var img = doCreatedTds(goods[i]);
+			 	  tr.append(img)
+			 	  tBody.append(tr);
+			 	  totalprice += parseFloat(goods[i].totalprice);
+			   }
+			   
+			   $(".tbody-ul").data("totalprice",totalprice);
+			   console.log($(".tbody-ul").data("totalprice"));
+			   $(".totalprice").html($(".tbody-ul").data("totalprice"));	
+			   
+		 }
+		 function doCreatedTds(row){
+			 
+			   var tds=  "<tr id='goods_12_377' class='cart-object-item scene_area '>"+
+            	" <td class='goods-img'>"+
+                "<a href='javascript:void(0)' target='_blank'>"+
+                  "  <img src='"+row.imagesurl+"'/>"+
+              "  </a>"+
+            "</td>"+
+          "  <td class='goods-cake'>"+
+               " <div>"+
+                   " <h4 class='cart-title'>"+
+                      "  <a href='javascript:void(0)' target='_blank'> "+row.name+"</a>"+
+                   " </h4> </div>"+
+           " </td>"+
+            "<td class='select-birthday-td'>"+
+                                    " </td>"+
+           " <td class='cart-unit-Price'>¥"+row.price+"</td>"+
+          "  <td class='number-li'>"+
+              "  <div class='number quantity-update'>"+
+                   " <input type='button' class='minus' disabled />"+
+                  "  <input type='text' class='quantity _quantity'"+
+                          " name='quantity[goods_12_377]' data-indent='goods_12_377'"+
+                          " data-price='298.000'"+
+                           "data-max='99' value='"+row.number+"'/>"+
+                 "   <input type='button' class='plus' />"+
+               " </div>"+
+           " </td>"+
+            "<td class='money' id='total_amount_goods_12_377'>￥"+row.totalprice+  " </td>"+
+            "<td class='delete'><a href='javascript:void(0)' data-indent='goods_12_377'><i></i></a></td>"+
+       " </tr>";
+		      return tds;
+		  } 
+	} 
+</script>

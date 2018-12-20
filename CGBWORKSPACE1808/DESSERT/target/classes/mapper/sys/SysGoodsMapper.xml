@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dessert.sys.dao.SysGoodsDao">
+
+ <select id="findPageObjects"
+            resultType="com.dessert.sys.orders.entity.SysGoods">
+          select *
+          from goods
+          <include refid="queryWhereId"/>
+          
+limit #{startIndex},#{pageSize}
+    </select>
+    <select id="getRowCount"
+            resultType="int">
+          select count(*)
+          from goods
+          <include refid="queryWhereId"/>
+</select>
+ <sql id="queryWhereId">
+          <where>
+            <if test="name!=null and name!=''">
+               name like concat("%",#{name},"%")
+            </if>
+            
+          </where>
+    </sql>
+    
+    
+ <select id="findPageObjectsByCategory"
+            resultType="com.dessert.sys.orders.entity.SysGoods">
+          select *
+          from goods
+          where category like concat("%",#{category},"%")
+          
+		 
+    </select>
+    <select id="getRowCountcategory"
+            resultType="int">
+          select count(*)
+          from goods
+         where name like concat("%",#{category},"%")
+</select>
+ 
+    
+<delete id="deleteGoods">
+delete from goods where id=#{id}
+</delete>
+
+<insert id="insertObject" parameterType="com.dessert.sys.orders.entity.SysGoods" useGeneratedKeys="true" keyProperty="id">
+insert into goods(id,name,price,category,image)values(null,#{name},#{price},#{category},#{image})
+
+</insert>
+<select id="findObjectById" resultType="com.dessert.sys.orders.entity.SysGoods">
+select * from goods where id=#{id}
+</select>
+
+<update id="updateObject">
+update goods
+<set>
+<if test="name!=null and name!=''">
+name=#{name},
+</if>
+<if test="price>0">
+price=#{price},
+</if>
+<if test="category!=null and category!=''">
+category=#{category},
+</if>
+<if test="image!=null and image!=''">
+image=#{image}
+</if>
+</set>
+where id=#{id}
+</update>
+</mapper>
+
+
+

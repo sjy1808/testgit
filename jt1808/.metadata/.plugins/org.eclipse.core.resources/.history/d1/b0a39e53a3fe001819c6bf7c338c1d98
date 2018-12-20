@@ -1,0 +1,44 @@
+package com.jt.web.service.impl;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jt.common.po.Item;
+import com.jt.common.service.HttpClientService;
+import com.jt.web.service.ItemService;
+
+@Service
+public class ItemServiceImpl implements ItemService{
+
+	@Autowired
+	private HttpClientService httpClient;
+	
+	private ObjectMapper objectMapper=new ObjectMapper();
+	/**
+	 * 1.定义url地址
+	 * 2.封装参数
+	 * 3.发起请求,解析返回结果
+	 */
+	@Override
+	public Item findItemById(Long itemId) {
+		String url="http://manage.jt.com/web/item/findItemById/"+itemId;
+		Map<String,String> params=new HashMap<>();
+		params.put("itemId", itemId+"");
+		
+		String itemJSON = httpClient.doGet(url,params);
+		Item item=null;
+		try {
+			//将JSON转化为对象
+			item = objectMapper.readValue(itemJSON, Item.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return item;
+	}
+
+	
+}

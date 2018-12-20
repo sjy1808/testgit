@@ -1,0 +1,184 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">员工管理</h3>
+
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 350px;">
+						<input type="text" name="table_search" id="searchNameId"
+							class="form-control pull-right" placeholder="员工名">
+
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default btn-search">
+                                <i class="fa fa-search"></i>
+							</button>
+							<button type="button" class="btn btn-default btn-delete">删除</button>
+							<button type="button" class="btn btn-default btn-add">添加</button>
+							<button type="button" class="btn btn-default btn-update">修改</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>姓名</th>
+							<th>年龄</th>
+							<th>性别</th>
+							<th>职位</th>
+							<th>电话</th>
+							<th>email</th>
+							<th>入职时间</th>
+							<th>住址</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyId"></tbody>
+				</table>
+			</div>
+			<div id="pageId" class="box-footer clearfix">
+			</div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+<script type="text/javascript" src="bower_components/layer/layer.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+	   $("#pageId").load("doPageUI.do",function(){
+		   doGetObjects();
+	   });
+	   $(".input-group-btn")
+	   .on("click",".btn-search",doQueryObjects)
+	   .on("click",".btn-add,.btn-update",doLoadEditUI)
+	   .on("click",".btn-delete",doDeleteObject);
+	  
+   });
+   function doDeleteObject(){
+	   var id=doGetCheckedId();
+	   if(!id){
+			  layer.alert("请先选择");
+			  return;
+		}
+	   if(layer.confirm("您确认删除吗?")==true){
+		   var url="employee/doDeleteObject.do";
+		   var params={"id":id};
+		   $.post(url,params,function(result){
+			   if(result.state==1){
+				   layer.alert(result.message);
+				   doGetObjects();
+			   }else{
+				   layer.alert(result.message);
+			   }
+		   })
+	   }
+   }
+   
+   function doLoadEditUI(){
+	   //1.判定点击的对象
+	   var title;
+	   if($(this).hasClass("btn-add")){
+		   title="添加员工";
+		   doLoadPage(title);
+	   }else if($(this).hasClass("btn-update")){
+		   title="修改员工";
+		   var id=doGetCheckedId();
+		   //console.log("id="+id)
+		   if(!id){
+			  layer.alert("请先选择");
+			  return;
+		   }
+		   //基于id进行查询并加载编辑页面
+		   doFindObjectById(id,title);
+	   }
+   }
+   function doFindObjectById(id,title){
+	   //1.params
+	   var params={"id":id};
+	   //2.url
+	   var url="employee/doFindObjectById.do";
+	   //3.ajax request
+	   $.getJSON(url,params,function(result){//JsonResult
+		   if(result.state==1){
+			  $("#mainContentId").data("rowData",result.data); 
+			 // console.log("result.data=",result.data)
+	          doLoadPage(title);
+		   }else{
+			  layer.alert(result.message);
+		   }
+	   });
+   }
+   
+   function doGetCheckedId(){
+	 return $("tbody input[name='radioId']:checked").val();
+   }
+   function doLoadPage(title){
+	   var url="employee/doEmployeeEditUI.do"
+	   $("#mainContentId").load(url,function(){
+		   $(".box-title").html(title);
+	   }) 
+   }
+  
+  
+   //处理查询按钮事件
+   function doQueryObjects(){
+	   $("#pageId").data("pageCurrent",1);
+	   doGetObjects();
+   }
+   //页面加载完成异步加载当前页数据
+   function doGetObjects(){
+	   var url="employee/doFindPageObjects.do";
+	   var pageCurrent=$("#pageId").data("pageCurrent");
+	   if(!pageCurrent)pageCurrent=1;
+	   var params={"pageCurrent":pageCurrent}
+	   params.name=$("#searchNameId").val().trim();
+	  // console.log(params);
+	   $.getJSON(url,params,function(result){
+		  // console.log(result);
+		   doHandleResponseResult(result);
+	   });
+   }
+   function doHandleResponseResult(result){
+	   if(result.state==1){
+		  doSetTableBodyRows(result.data.records);
+		  doSetPagination(result.data);
+		}else{
+		  layer.alert(result.message);
+	   }
+   }
+   //通过服务端返回的数据初始化页面
+   function doSetTableBodyRows(data){
+	  //1.获取tbody对象，并清空内容
+	  var tBody=$("#tbodyId");
+	  tBody.empty();
+	  //2.迭代data内容将数据追加到tbody中
+	  for(var i in data){
+		  var tr=$("<tr></tr>");
+		  tr.data("rowData",data[i]);
+		  var tds=doCreateTds(data[i]);
+		  tr.append(tds);
+		  tBody.append(tr);
+	  }
+   }
+   function doCreateTds(row){
+	   console.log(row);
+	   var tds="<td><input type='radio' name='radioId' value='"+row.id+"' ></td>"+
+	     "<td>"+row.name+"</td>"+
+	     "<td>"+row.age+"</td>"+
+	     "<td>"+row.gender+"</td>"+
+	     "<td>"+row.role+"</td>"+
+	     "<td>"+row.phone+"</td>"+
+	     "<td>"+row.email+"</td>"+
+	     "<td>"+row.hiredate+"</td>"+
+	     "<td>"+row.adress+"</td>"; 
+       return tds;
+   }
+</script>
+
+
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dessert.sys.dao.SysDeptDao">
+	<select id="findObjects" resultType="map">
+		select c.*,(
+		 			select p.name 
+                    from dept p
+                    where c.parentId=p.id
+                    ) parentName
+         from dept c
+	</select>
+	<select id="getChildCount"
+             parameterType="int"
+             resultType="int">
+          select count(*)
+          from dept
+          where parentId=#{id}        
+     </select>
+	<delete id="deleteObject"
+             parameterType="int">
+          delete from dept
+          where id=#{id}
+     </delete>
+	<select id="findZtreeDeptNodes"
+            resultType="com.dessert.common.vo.Node">
+        select id,name,parentId
+        from dept       
+    </select>
+	<insert id="insertObject" parameterType="com.dessert.sys.entity.SysDept">
+         insert into dept
+(name,sort,note,parentId,createdTime,modifiedTime)
+         values
+(#{name},#{sort},#{note},#{parentId},now(),now())
+</insert>
+	<update id="updateObject"
+            parameterType="com.dessert.sys.entity.SysDept">
+         update dept
+         set
+           name=#{name},
+           note=#{note},
+           sort=#{sort},
+           parentId=#{parentId},
+           modifiedTime=now()
+        where id=#{id}
+    </update>
+	
+</mapper>

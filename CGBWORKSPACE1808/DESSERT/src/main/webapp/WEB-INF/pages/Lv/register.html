@@ -1,0 +1,76 @@
+
+	<!-- 购物导航 -->
+	<div class="login-background" style="height: 809px;">
+		<!-- 中间内容 -->
+		<div class="content-box" style="width: 1200px; min-height: 343px;">
+			<div class="form-login-box" style="right: 0px;">
+				<div class="login-regi-title">
+					<h2 class="regi-user active">用户注册</h2>
+				</div>
+				<script type="text/javascript">
+					var VERIFY_CODE_SALT = '8e64f5b59068d765';
+				</script>
+				<form id="sign-up-form" method="post">
+					<input type="hidden" name="QmFSnddXWAQT01d2ro5UYw"
+						value="1INJ9WpYHzeTxFjAwCM61g"> <input type="hidden"
+						name="redirectUrl" value="Lw==">
+					<div class="form-content" id="reister-user">
+						<ul class="reister-user">
+							<li><input type="text" name="loginName" autocomplete="off"
+								autofocus="" maxlength="11" placeholder="输入用户名" id="usernameId"
+								tabindex="1"><i></i></li>
+							<li><input type="password" name="password"
+								autocomplete="off" maxlength="20"
+								placeholder="密码：请输入8～20字符，需同时包含英文和数字" id="password" tabindex="2"><i></i>
+							</li>
+							<li><input type="password" name="rePassword"
+								autocomplete="off" maxlength="20" placeholder="确认密码"
+								id="passwordId" tabindex="3"><i></i></li>
+							<li><input id="birthday" type="text" name="birthday"
+								data-toggle="date" placeholder="请选择生日" data-required="1"
+								class="hasDatepicker"></li>
+							<!-- 输入短信验证码结束 -->
+							<li><input type="button" class="regist-button" value="注册"
+								id="goRegister"></li>
+						</ul>
+					</div>
+
+					<div class="reading-protocol">
+						<label><input type="checkbox" name="agree" checked="">&nbsp;已阅读并同意</label>
+						<a href="/article-agreement-36.html">21客会员协议</a>和 <a
+							href="/article-policy-35.html">隐私保护政策</a>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="footer"></div>
+	<script type="text/javascript">
+		$(function() {
+			$("#sign-up-form").on("click", "#goRegister", doRegister);
+		});
+		function doRegister() {
+			var params = {
+				username : $("#usernameId").val(),
+				password : $("#passwordId").val()
+			}
+			console.log(params);
+			var url = "user/doSaveObject.do";
+			$.post(url, params, function(result) {
+				console.log(result.state);
+				if (result.state == 1) {
+					alert("注册成功");
+					$("#Content-all").load("login.do");
+					/* $(location).attr('href', "doLoginUI.do"); */
+				} else {
+					alert("注册失败");
+					$("#Content-all").load("register.do");
+				}
+				/* location.href = "doLoginUI.do?t=" + Math.random(); */
+				return false;//防止刷新时重复提交
+			});
+		}
+	</script>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dessert.sys.dao.UserDao">
+
+	<!-- 根据前台页面获取用户信息 -->
+	<select id="findUserByUserName" resultType="com.dessert.sys.orders.entity.User">
+		select * from user
+		where username=#{username}
+	</select>
+
+
+	<select id="findObjects" resultType="com.dessert.sys.orders.entity.User">
+		select * from
+		user
+		where
+		id=#{id}
+	</select>
+	<sql id="queryWhereId">
+		<where>
+			<if test="username!=null and username!=''">
+				username like concat("%",#{username},"%")
+			</if>
+		</where>
+	</sql>
+
+	<select id="getRowCount" resultType="int">
+		select count(*) from user
+		<include refid="queryWhereId" />
+	</select>
+	<select id="findPageObjects" resultType="com.dessert.sys.orders.entity.User">
+		select
+		u.id,u.username,o.number,u.email,u.mobile,u.createdTime,u.address
+		from
+		user u left join user_orders uo on(u.id=uo.user_id) left join
+		orders o
+		on(uo.orders_id=o.id)
+		<include refid="queryWhereId" />
+		order by u.createdTime desc
+		limit #{startIndex},#{pageSize}
+	</select>
+
+	<delete id="deleteObjects">
+		delete from user where id=#{id}
+	</delete>
+
+	<insert id="insertObject" useGeneratedKeys="true" keyProperty="id">
+		insert into user
+		(username,password,salt,email,mobile,address,createdTime)
+		values
+		(#{username},#{password},#{salt},#{email},#{mobile},#{address},now())
+	</insert>
+	<!-- 更新用户信息 -->
+	<update id="updateObject" parameterType="com.dessert.sys.orders.entity.User">
+		update user
+		set
+		username=#{username},
+		password=#{password},
+		email=#{email},
+		mobile=#{mobile},
+		address=#{address}
+		where id=#{id}
+	</update>
+</mapper>

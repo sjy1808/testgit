@@ -1,0 +1,8 @@
+package com.jt.cart.manage.mapper;
+
+import com.jt.common.mapper.SysMapper;
+import com.jt.common.po.Cart;
+
+public interface CartMapper extends SysMapper<Cart> {
+
+}

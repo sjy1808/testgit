@@ -1,0 +1,156 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">日志管理</h3>
+
+				<div class="box-tools">
+					<div class="input-group input-group-sm" style="width: 350px;">
+						<input type="text" name="table_search" id="searchNameId"
+							class="form-control pull-right" placeholder="用户名">
+
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default btn-search">
+								<i class="fa fa-search"></i>
+							</button>
+							<button type="button" class="btn btn-default btn-delete">删除</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th><input type="checkbox" id="checkAll">全选</th>
+							<th>用户名</th>
+							<th>操作</th>
+							<th>请求方法</th>
+							<th>请求参数</th>
+							<th>IP地址</th>
+							<th>执行时间</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyId">
+
+					</tbody>
+				</table>
+			</div>
+			<div id="pageId" class="box-footer clearfix"></div>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#pageId").load("doPageUI.do",function(){
+			doGetObjects();
+		});
+		$(".input-group-btn").on("click",".btn-search",doQueryObjects)
+							.on("click",".btn-delete",doDeleteObjects);
+		$("thead").on("change","#checkAll",doChangeTBodyCheckBoxState);
+		$("#tbodyId").on("change",".cBox",doChangeTHeadCheckBoxState);
+	});
+	function doDeleteObjects(){
+		var ids=doGetCheckedIds();
+		//console.log("ids",ids);
+		if(ids.length==0){
+			alert("至少选择一个");
+			return;
+		}
+		var url="log/doDeleteObjects.do";
+		var params={"ids":ids.toString()};
+		$.post(url,params,function(result){
+			if(result.state==1){
+				alert(result.message);
+				doGetObjects();
+			}else{
+				alert(result.message);
+			}
+		});
+	}
+	function doGetCheckedIds(){
+		var array=[];
+		$("#tbodyId input[name='cItem']").each(function(){
+			if($(this).prop("checked")){
+				array.push($(this).val());
+			}
+		});
+		return array;
+	}
+	function doQueryObjects(){
+		//数据查询时页码的初始位置也应该是第一页
+		$("#pageId").data("pageCurrent",1);
+		doGetObjects();
+	}
+	function doGetObjects(){
+		//1.定义参数url和参数
+		var url="log/doFindPageObjects.do"
+		var pageCurrent=$("#pageId").data("pageCurrent");
+		if(!pageCurrent)pageCurrent=1;
+		var params={"pageCurrent":pageCurrent};
+		//获取搜索框中输入的内容
+		var username=$("#searchNameId").val();
+		//输入内容与数据库中的内容进行对比
+		if(username)params.username=username;
+		//2.发起异步请求
+		$.getJSON(url,params,function(result){
+			doHandleResponseResult(result);
+		});
+	}
+	function doHandleResponseResult(result){
+		if(result.state==1){
+			doSetTableBodyRows(result.data.records);
+			doSetPagination(result.data);
+		}else{
+			alert(result.message);
+		}
+	}
+	function doSetTableBodyRows(records){
+		var tbody=$("#tbodyId");
+		tbody.empty();
+		for(var i in records){
+			var tr=$("<tr></tr>");
+			var tds=doCreateTds(records[i]);
+			tr.append(tds);
+			tbody.append(tr);
+		}
+	}
+	function doCreateTds(data){
+		var tds="<td><input type='checkbox' class='cBox' name='cItem' value='"+data.id+"'></td>"+
+		   	 "<td>"+data.username+"</td>"+
+		     "<td>"+data.operation+"</td>"+
+		     "<td>"+data.method+"</td>"+
+		     "<td>"+data.params+"</td>"+
+		     "<td>"+data.ip+"</td>"+
+		     "<td>"+data.time+"</td>";	   
+		return tds;
+
+	}
+	//当tbody中的checkbox的状态发生变化以后,修改thead中全选元素的状态值
+	function doChangeTHeadCheckBoxState(){
+		//1.设定默认值
+		var flag=true;
+		//2.迭代所有的tbody中的checkbox值并进行与操作
+		$("#tbodyId input[name='cItem']").each(function(){
+			flag=flag&$(this).prop("checked")
+		});
+		//3.修改全选元素checkbox的值为flag
+		$("#checkAll").prop("checked",flag);
+		
+	}
+	//当Thead中全选元素的状态影响tbody中checkbox对象状态
+	//实现全选操作
+	function doChangeTBodyCheckBoxState(){
+		//1.获取当前点击对象的checked属性的值
+		var flag=$(this).prop("checked");//true or false
+		//2.将tbody中所有的checkbox元素的值都修改为flag对应的值
+		$("#tbodyId input[name='cItem']").prop("checked",flag);
+	}
+</script>
+
+
+
+

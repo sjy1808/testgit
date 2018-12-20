@@ -1,0 +1,24 @@
+package com.jt.web.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jt.common.po.Cart;
+import com.jt.common.service.HttpClientService;
+import com.jt.web.service.CartService;
+@Service
+public class CartServiceImpl implements CartService {
+
+	@Autowired
+	private HttpClientService httpClient;
+	
+	@Override
+	public List<Cart> findCartByUserId(Long userId) {
+		String url="http://cart.jt.com/cart/query/"+userId;
+		
+		return null;
+	}
+
+}
