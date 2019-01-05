@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<div id="app">div</div>
+</body>
+<script type="text/javascript">
+/**vue框架代码开始*/
+//申明类
+function Vue(options){
+	var rootId=options.el;
+	var root=document.getElementById(rootId);
+	root.style.backgroundColor="red";
+}
+/**vue框架代码结束*/
+
+	/**程序员用框架*/
+	var options={el:"app"};
+	//启动框架
+	var vue=new Vue(options);
+</script>
+</html>

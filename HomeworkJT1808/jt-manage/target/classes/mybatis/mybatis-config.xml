@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<!-- 开启驼峰自动映射
+			ORM映射的两部分:1.对象 user{userId,userName,userAddr}
+						2.表     tb_user(user_id,user_name,user_addr)
+						如果按照上述的配置,则使用ResultType不能自动映射,需要使用resultMap(必须手动映射)
+						
+					驼峰映射规则:将字段中的"_"自动去除,并且之后的首字母大写,转化完成后,实现对象映射.
+		 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		
+		<!-- mybatis缓存
+			1.一级缓存   默认开启
+				sqlSession? (与数据库进行会话 ORM)将数据库链接进行扩展(实现ORM)
+				在一个线程(sqlSession)内实现数据共享
+			2.二级缓存  默认关闭
+				只要由一个sqlSessionFactory所生产的sqlSession那么就可以实现数据共享
+				适用于多用户
+				因为mybatis自身的二级缓存性能较低,实际开发中不用
+				实际开发中使用redis
+		 -->
+	</settings>
+	<plugins>
+		<!-- 通用Mapper插件 -->
+		<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+			<!-- 主键自增会写方法,默认值MYSQL -->
+			<property name="IDENTITY" value="MYSQL"/>
+			<!-- 通用Mapper接口,多个通用接口用逗号隔开 -->
+			<property name="mappers" value="com.jt.common.mapper.SysMapper"/>
+		</plugin>
+	</plugins>
+	
+</configuration>

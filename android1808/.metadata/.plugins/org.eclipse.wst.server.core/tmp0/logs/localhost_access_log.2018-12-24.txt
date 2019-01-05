@@ -1,0 +1,13 @@
+127.0.0.1 - - [24/Dec/2018:10:10:30 +0800] "GET / HTTP/1.1" 200 17271
+172.88.7.120 - - [24/Dec/2018:10:51:30 +0800] "GET /api/getIndexItem.html HTTP/1.1" 200 1121
+172.88.7.120 - - [24/Dec/2018:10:51:30 +0800] "GET /favicon.ico HTTP/1.1" 404 7369
+172.88.7.120 - - [24/Dec/2018:21:01:43 +0800] "GET /user/register.html?usrename=1808&password=1808&email=1808@qq.com&phone=13849054685 HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:02:16 +0800] "GET /user/register.html?usrename=180801&password=1808&email=1808@qq.com&phone=13849054685 HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:12:13 +0800] "GET /user/register.html?usrename=180801&password=1808&email=1808@qq.com&phone=13849054685 HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:22:28 +0800] "GET /user/register.html?usrename=180802&password=1808&email=1808@qq.com&phone=13846979989 HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:23:27 +0800] "GET /user/register.html?usrename=180802&password=1808&email=1808@qq.com&phone=13846979989 HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:25:46 +0800] "GET /user/register.html?usrename=&password=&email=undefined&phone=undefined HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:25:52 +0800] "GET /user/register.html?usrename=&password=&email=undefined&phone=undefined HTTP/1.1" 200 7535
+172.88.7.120 - - [24/Dec/2018:21:27:57 +0800] "GET /user/register.html?username=undefined&password=undefined&email=undefined&phone=undefined HTTP/1.1" 200 48
+172.88.7.120 - - [24/Dec/2018:21:28:09 +0800] "GET /user/register.html?username=undefined&password=undefined&email=undefined&phone=undefined HTTP/1.1" 200 48
+172.88.7.120 - - [24/Dec/2018:21:28:34 +0800] "GET /user/register.html?username=1808&password=1808&email=1808@qq.com&phone=13849058698 HTTP/1.1" 200 48

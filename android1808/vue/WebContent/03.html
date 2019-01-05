@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+//framework start
+function Vue(options){
+	//得到是一个函数
+	var fun=options.mounted;
+	window.onload=fun;
+}
+//framework end
+var options={
+		mounted:function(){
+			console.log("网页加载完成");
+		}
+}
+var vue=new Vue(options);
+</script>
+</html>

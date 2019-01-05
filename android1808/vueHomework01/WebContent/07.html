@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+</head>
+<body>
+<button @click="deleteTest">delete</button>
+<button @click="modify">modify</button>
+</body>
+<script type="text/javascript">
+//framework start
+function Vue(options){
+	//1.找到所有的button
+	var buttons=document.getElementsByTagName("button");
+	//2.遍历button数组
+	for(var i=0;i<buttons.length;i++){
+		//3.得到button的所有属性
+		var button=buttons[i];
+		var attributes=button.attributes;
+		//3.1遍历属性@click=deleteTest
+		for(var k=0;k<attributes.length;k++){
+			var attributeName=attributes[k].name;
+			//第一个button取到的是deleteTest
+			//第二个button取到的是modify
+			var attributeValue=attributes[k].value;
+			//3.2判断属性名是不是@click
+			if(attributeName=="@click"){
+				//3.3时间绑定,从options中找到函数
+				$.each(options,function(key,value){
+					console.log(key);
+					console.log(value);
+					if(attributeValue==key){
+						button.onclick=value;
+					}
+				})
+			}
+		}
+	}
+}
+//framework end
+var options={
+		deleteTest:function(){
+			console.log("delete")
+		},modify:function(){
+			console.log("modify")
+		}
+}
+var vue=new Vue(options);
+</script>
+</html>

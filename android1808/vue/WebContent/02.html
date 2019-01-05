@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body >
+<div id="app">div</div>
+</body>
+<script type="text/javascript">
+	function Vue(options){
+		var el=options.el;
+		var root=document.getElementById(el);
+		var data=options.data;
+		root.innerHTML=root.innerHTML+data.item.title;
+	}
+	//框架代码结束
+	var options={
+			el:"app",
+			data:{
+				item:{title:"手机"}
+			}
+	}
+	var vue=new Vue(options);
+</script>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Administrator\Desktop\上课笔记\android\课前资料\Day17-rabbitMQ\测试代码\rabbitmqExchange"/>
+			<item value="D:\android1808\jt-dubbo-parent"/>
+			<item value="D:\android1808\jt-dubbo-web"/>
+			<item value="D:\android1808\jt-dubbo-order"/>
+			<item value="D:\android1808\jt-dubbo-cart"/>
+			<item value="D:\android1808\jt-dubbo-sso"/>
+			<item value="D:\android1808\jt-dubbo-manage"/>
+			<item value="D:\android1808\jt-dubbo-common"/>
+			<item value="C:\Users\Administrator\Desktop\上课笔记\android\课前资料\亿发,移动端课前资料\android\pdServer"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

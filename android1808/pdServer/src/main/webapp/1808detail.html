@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+</head>
+<body>
+<div id="app" class="container">
+	<div class="row">
+		<div class="col=xs-12">
+			<a href="1808index.html">返回</a><br/>
+			<img v-bing:src="item.image" class="img-responsive"><br/>
+			<span>{{item.title}}</span><br>
+			<span>{{item.sellPoint}}</span><br>
+			<div v-html="item.desc"></div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+var options={
+		el:"#app",
+		data:{
+			item:null
+		},
+		mounted:function(){
+			var map=getParamMap();
+			var itemId=map.get("itemId");
+			console.log(itemId);
+			var url="/api/getItemDetail.html"+"?itemId="+itemId;
+			axios.get(url)
+			.then(function(res){
+				var result=res.data;
+				this.vue.item=result.data;
+				console.log(result);
+			})
+			.catch(function(e){
+				console.log(e);
+			});
+		}
+}
+var vue=new Vue(options);
+</script>
+</html>

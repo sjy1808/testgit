@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+</head>
+<body>
+<button @click="insert">insert</button>
+<button @click="deleteTest">delete</button>
+<div id="app"></div>
+</body>
+<script type="text/javascript">
+//事件名由用户指定
+function Vue(options){
+	var el=options.el;
+	var root=document.getElementById(el);
+	setInterval(function(){
+		root.innerHTML="";
+		var items=options.data.items;
+		for(var i=0;i<items.length;i++){
+			var item=items[i];
+			root.innerHTML=root.innerHTML+item.title+"<br/>";
+		}
+	},100);
+	var buttons=document.getElementsByTagName("button");
+	for(var i=0;i<buttons.length;i++){
+		var button=buttons[i];
+		var attributes=button.attributes;
+		for(var k=0;k<attributes.length;k++){
+			var attribute=attributes[k];
+			var attributeName=attribute.name;
+			var attributeValue=attribute.value;
+			if(attributeName=="@click"){
+				$.each(options,function(key,value){
+					if(key==attributeValue){
+						button.onclick=value;
+					}
+				});
+			}
+		}
+	}
+}
+var options={
+		el:"app",
+		data:{
+			items:[]
+		},
+		deleteTest:function(){
+			options.data.items.pop();
+		},
+		insert:function(){
+			var item={title:"地方"};
+			options.data.items.push(item);
+		}
+}
+var vue=new Vue(options);
+</script>
+</html>

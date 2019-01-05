@@ -1,0 +1,7 @@
+package com.jt.cart.mapper;
+
+import com.jt.common.po.Cart;
+
+public interface CartMapper {
+   
+}

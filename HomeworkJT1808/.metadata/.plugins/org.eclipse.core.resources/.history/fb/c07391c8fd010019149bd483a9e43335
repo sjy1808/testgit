@@ -1,0 +1,47 @@
+package com.jt.sso.service.impl;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jt.common.po.User;
+import com.jt.sso.mapper.UserMapper;
+import com.jt.sso.service.UserService;
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserMapper userMapper;
+
+	/**
+	 * 1.通过type类型确定用户校验的字段
+	 * 2.根据用户传值和字段查询数据库
+	 */
+	@Override
+	public Boolean findCheckUser(String param, Integer type) {
+		String column=null;
+		switch (type) {
+		case 1:
+			column="username";
+			break;
+		case 2:
+			column="phone";
+			break;
+		case 3:
+			column="email";
+			break;
+		}
+		int count=userMapper.findCheckUser(param,column);
+		//true用户已经存在,false用户不存在
+		return count==0?false:true;
+	}
+
+	@Override
+	public void saveUser(User user) {
+		user.setEmail(user.getPhone());
+		user.setCreated(new Date());
+		user.setUpdated(user.getCreated());
+		userMapper.insert(user);
+	}
+}

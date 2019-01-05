@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="app">div</div>
+</body>
+<script type="text/javascript">
+//options是配置参数
+function Vue(options){
+	var el=options.el;
+	var root=document.getElementById(el);
+	root.style.backgroundColor="#FF0000";
+}
+//设置根元素
+var options={
+		el:"app"
+}
+//启用Vue框架
+var vue=new Vue(options);
+</script>
+</html>

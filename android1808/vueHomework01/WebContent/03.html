@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body id="app">
+
+</body>
+<script type="text/javascript">
+//framework start
+function Vue(options){
+	//找到根元素
+	var rootId=options.el;
+	var root=document.getElementById(rootId);
+	//取商品数据,有title
+	var data=options.data;
+	//显示数据
+	root.innerHTML=data.item.title;
+}
+//framework end
+var options={
+		el:"app",
+		data;{item:{title:"手机"}}
+}
+var vue=new Vue(options);
+
+</script>
+</html>

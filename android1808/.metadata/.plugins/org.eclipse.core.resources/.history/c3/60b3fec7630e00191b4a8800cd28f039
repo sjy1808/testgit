@@ -1,0 +1,14 @@
+package com.jt.search.service;
+
+import com.jt.search.pojo.Item;
+import com.sun.tools.javac.util.List;
+
+public class SearchServiceImpl implements SearchService {
+
+	@Override
+	public List<Item> findItemByKey(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

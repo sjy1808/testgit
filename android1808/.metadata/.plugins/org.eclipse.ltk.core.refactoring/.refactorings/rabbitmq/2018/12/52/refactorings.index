@@ -1,0 +1,8 @@
+1546051586497	Extract local variable 'connection'
+1546051615608	Extract local variable 'channel'
+1546054379300	Extract local variable 'connection'
+1546054399307	Extract local variable 'channel'
+1546054799319	Extract local variable 'delivery'
+1546054813467	Extract local variable 'body'
+1546067349472	Copy compilation unit
+1546067444524	Copy compilation unit

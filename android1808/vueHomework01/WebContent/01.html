@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/**样式在屏幕宽度>0 <768的设备上生效*/
+/**屏幕分成12列,宽度是12列width=100%,宽度是6列width=50%*/
+@media only screen and (min-width:0px) and(max-width:768px){
+	body{
+		background-color:red;
+	}
+	.col-xs-12{width:50%}
+	.col-xs-6{width:50%}
+}
+/**样式在屏幕宽度>=768 <992的设备上生效*/
+@media only screen and (min-width:768px) and(max-width:992px){
+	body{
+		background-color: green;
+	}
+	.col-sm-12{width:100%}
+	.col-sm-6{width:50%}
+}
+/**样式在屏幕宽度>=992的设备上生效*/
+@media only screen and (min-width:992px){
+	body{
+		background-color:blue;
+	}
+	.col-sm-12{width:100%}
+	.col-sm-6{width:50%}
+}
+.item{
+	color:red;
+}
+.title{
+	font-size:80px;
+}
+
+</style>
+</head>
+<body>
+<div>test1</div>
+<div class="item">test2</div>
+<div class="title">test3</div>
+<div class="item title">test4</div>
+<div class="col-xs-12 col-sm-6">div1</div>
+<div class="col-xs-12 col-sm-6">div2</div>
+</body>
+</html>

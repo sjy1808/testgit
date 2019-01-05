@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input onclick="insert()" type="button" value="insert" />
+<div id="app"></div>
+</body>
+<script type="text/javascript">
+//framework start
+function Vue(options){
+	//从options中取数据
+	var data=options.data;
+	//从options中取根元素
+	var rootId=options.el;
+	var root=document.getElementById(rootId);
+	//每隔100ms更新界面
+	window.setInterval(function()){
+		//清空以前的数据
+		root.innerHTML="";
+		//遍历数组
+		for(var i=0;i<data.items.length;i++){
+			var item=data.items[i];
+			root.innerHTML=root.innerHTML+item.title+"<br/>";
+		}
+	},100);
+}
+//framework end
+var options={
+		el:"app",
+		data:{
+			items:[{title:item1},{title:item2}]
+		}
+}
+var vue=new Vue(options);
+function insert(){
+	var item={title:"new item"};
+	var length=options.data.items.length;
+	options.data.items[length]=item;
+}
+
+</script>
+</html>

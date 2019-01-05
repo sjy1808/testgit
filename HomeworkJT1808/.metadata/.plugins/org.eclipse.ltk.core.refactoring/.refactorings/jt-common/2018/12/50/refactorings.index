@@ -1,0 +1,7 @@
+1544620931519	Extract local variable 'properties'
+1544621206876	Extract local variable 'hostAndPort'
+1544705955242	Extract local variable 'builder'
+1544706116493	Extract local variable 'httpGet'
+1544706166451	Extract local variable 'response'
+1544855799563	Extract local variable 'post'
+1544859035462	Extract local variable 'httpResponse'

@@ -1,0 +1,9 @@
+package com.jt.search.service;
+
+import com.jt.search.pojo.Item;
+import com.sun.tools.javac.util.List;
+
+public interface SearchService {
+
+	List<Item> findItemByKey(String key);
+}

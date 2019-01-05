@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;str&apos; from expression &apos;cartService.findCartByUserId(90L)&apos;&#x0D;&#x0A;- Original project: &apos;dubboConsumer&apos;&#x0D;&#x0A;- Variable name: &apos;str&apos;&#x0D;&#x0A;- Destination method: &apos;com.tedu.dubboConsumer.CartController.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;cartService.findCartByUserId(90L)&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;str&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/main\/java&lt;com.tedu.dubboConsumer{CartController.java" name="str" replace="true" selection="501 0" stamp="1545899367375" version="1.0"/>
+</session>

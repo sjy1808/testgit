@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function call() {
+		//调Android平台打电话
+		//androidPhoneObject是android平台提供的
+		//Android平台有phone java对象有call方法
+		//android webView.addJavaScriptInterface(phone,androidPhoneObject)
+		window.androidPhoneObject.call();
+	}
+</script>
+</head>
+<body>
+	<button onclick="call()">120</button>
+</body>
+</html>

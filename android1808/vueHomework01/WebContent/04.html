@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+//framework start
+function Vue(options){
+	var mounted=options.mounted;
+	window.onload=mounted();
+}
+//framework end
+//配置参数,设置网页加载后回调的函数
+var options={
+		mounted:function(){
+			console.log("网页加载完成");
+		}
+}
+var vue=new Vue(options);
+</script>
+</html>

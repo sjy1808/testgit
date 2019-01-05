@@ -1,0 +1,9 @@
+INDEX VERSION 1.3+D:\HomeworkJT1808\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2115222606.index
+2586822997.index
+30720408.index
+859137819.index
+62708468.index
+3412646274.index
+1693753390.index
+2769856843.index

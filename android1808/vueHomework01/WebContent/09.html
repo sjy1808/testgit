@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<input ref="itemTitle">
+	<button v-on:click="insert">insert</button>
+	<div v-for="item in itmes">
+		<span>{{item.title}}</span>
+		<span @click="deleteTest(item.title)">删除</span>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+var options={
+		methods:{
+			deleteTest:function(param){
+				console.log(param);
+				for(var i=0;i<this.items.length;i++){
+					if(this.items[i].title==param){
+						this.items.splice(i,1);
+						break;
+					}
+				}
+			},
+			insert:function(){
+				//接收input中的值
+				var itemTitle=this.$refs.itemTitle.value;
+				var item={
+						title:itemTitle
+				};
+				this.items.push(item);
+			}
+		},
+		el:"#app",
+		mounted:function(){
+			console.log("网页加载完成");
+		},
+		data:{
+			items:[{title:"item1"},{title:"itme2"}]
+		}
+}
+var vue=new Vue(options);
+</script>
+</html>

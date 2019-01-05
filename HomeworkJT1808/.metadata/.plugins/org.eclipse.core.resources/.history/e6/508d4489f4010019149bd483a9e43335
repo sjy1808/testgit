@@ -1,0 +1,16 @@
+package com.jt.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+
+	///user/login.html  user/resgister.html
+	@RequestMapping("/{moduleName}")
+	public String toModule(@PathVariable String moduleName){
+		return moduleName;
+	}
+}

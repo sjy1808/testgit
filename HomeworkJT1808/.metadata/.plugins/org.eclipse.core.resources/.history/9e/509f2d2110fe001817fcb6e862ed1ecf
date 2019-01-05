@@ -1,0 +1,5 @@
+package com.jt.common.factory;
+
+public class SpringFactory {
+
+}

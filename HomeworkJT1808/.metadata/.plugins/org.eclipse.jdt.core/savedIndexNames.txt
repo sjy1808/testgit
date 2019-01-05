@@ -1,0 +1,6 @@
+INDEX VERSION 1.127+D:\HomeworkJT1808\.metadata\.plugins\org.eclipse.jdt.core
+2586822997.index
+1538331470.index
+3412646274.index
+30720408.index
+1693753390.index

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=jt-manage/src\/main\/java&lt;com.jt.manage.service{UserService.java[UserService" modifiers="513" timestamp="1543499790138"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/springframework\/spring-webmvc\/4.1.3.RELEASE\/spring-webmvc-4.1.3.RELEASE.jar&lt;org.springframework.web.servlet.view(InternalResourceViewResolver.class[InternalResourceViewResolver" modifiers="33" timestamp="1430875194000"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/springframework\/spring-webmvc\/4.1.3.RELEASE\/spring-webmvc-4.1.3.RELEASE.jar&lt;org.springframework.web.servlet(DispatcherServlet.class[DispatcherServlet" modifiers="33" timestamp="1430875194000"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/springframework\/spring-web\/4.1.3.RELEASE\/spring-web-4.1.3.RELEASE.jar&lt;org.springframework.web.filter(CharacterEncodingFilter.class[CharacterEncodingFilter" modifiers="33" timestamp="1430796826000"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/com\/alibaba\/druid\/1.0.29\/druid-1.0.29.jar&lt;com.alibaba.druid.pool(DruidDataSource.class[DruidDataSource" modifiers="33" timestamp="1513667505158"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/springframework\/spring-jdbc\/4.1.3.RELEASE\/spring-jdbc-4.1.3.RELEASE.jar&lt;org.springframework.jdbc.datasource(DataSourceTransactionManager.class[DataSourceTransactionManager" modifiers="33" timestamp="1430875198000"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/mybatis\/mybatis-spring\/1.2.2\/mybatis-spring-1.2.2.jar&lt;org.mybatis.spring(SqlSessionFactoryBean.class[SqlSessionFactoryBean" modifiers="33" timestamp="1430875310000"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/mybatis\/mybatis-spring\/1.2.2\/mybatis-spring-1.2.2.jar&lt;org.mybatis.spring.mapper(MapperScannerConfigurer.class[MapperScannerConfigurer" modifiers="33" timestamp="1430875310000"/>
+<typeInfo handle="=jt-manage/src\/main\/java&lt;com.jt.manage.service{ItemService.java[ItemService" modifiers="513" timestamp="1544708972447"/>
+<typeInfo handle="=jt-manage/D:\/tts9\/jdk1.8.0_45\/jre\/lib\/rt.jar&lt;com.sun.org.apache.xerces.internal.xs(ItemPSVI.class[ItemPSVI" modifiers="1537" timestamp="1435051020671"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/com\/github\/abel533\/mapper\/2.3.2\/mapper-2.3.2.jar&lt;com.github.abel533.mapperhelper(MapperInterceptor.class[MapperInterceptor" modifiers="33" timestamp="1431050680000"/>
+<typeInfo handle="=jt-common/src\/main\/java&lt;com.jt.common.mapper{SysMapperProvider.java[SysMapperProvider" modifiers="1" timestamp="1543407752816"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/springframework\/spring-web\/4.1.3.RELEASE\/spring-web-4.1.3.RELEASE.jar&lt;org.springframework.web.multipart.commons(CommonsFileUploadSupport.class[CommonsFileUploadSupport" modifiers="1057" timestamp="1430796826000"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/org\/springframework\/spring-web\/4.1.3.RELEASE\/spring-web-4.1.3.RELEASE.jar&lt;org.springframework.web.multipart.commons(CommonsMultipartResolver.class[CommonsMultipartResolver" modifiers="33" timestamp="1430796826000"/>
+<typeInfo handle="=jt-manage/src\/main\/java&lt;com.jt.manage.service{FileService.java[FileService" modifiers="513" timestamp="1543931157964"/>
+<typeInfo handle="=jt-common/D:\/repository\/mvn_repo\/redis\/clients\/jedis\/2.6.2\/jedis-2.6.2.jar&lt;redis.clients.jedis(JedisPoolConfig.class[JedisPoolConfig" modifiers="33" timestamp="1504109471099"/>
+<typeInfo handle="=jt-web/src\/main\/java&lt;com.jt.web.service{ItemService.java[ItemService" modifiers="513" timestamp="1544709168269"/>
+<typeInfo handle="=jt-common/src\/main\/java&lt;com.jt.common.po{BasePojo.java[BasePojo" modifiers="1" timestamp="1543582943002"/>
+<typeInfo handle="=jt-sso/src\/main\/java&lt;com.jt.sso.service{UserService.java[UserService" modifiers="513" timestamp="1545052231474"/>
+<typeInfo handle="=jt-web/src\/main\/java&lt;com.jt.web.service{UserService.java[UserService" modifiers="513" timestamp="1545050317422"/>
+<typeInfo handle="=jt-cart/src\/main\/java&lt;com.jt.cart.service{CartService.java[CartService" modifiers="513" timestamp="1545140709343"/>
+<typeInfo handle="=jt-web/src\/main\/java&lt;com.jt.web.service{CartService.java[CartService" modifiers="513" timestamp="1545141010863"/>
+</typeInfoHistroy>

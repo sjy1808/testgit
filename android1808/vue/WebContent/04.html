@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input onclick="insert()" type="button" value="insert"/>
+<div id="app">div</div>
+</body>
+<script type="text/javascript">
+//框架自动从options.data中取数据,显示在网页上
+function Vue(options){
+	var el=options.el;
+	var root=document.getElementById(el);
+	var data=options.data;
+	var items=data.items;
+	setInterval(function(){
+		//清空原有数据
+		root.innerHTML="";
+		for(var i=0;i<items.length;i++){
+			var item=items[i];
+			var title=item.title;
+			root.innerHTML=root.innerHTML+title+"<br/>";
+		}
+	},1000);
+}
+var options={el:"app",data:{items:[{title:"手机"}]}};
+var vue=new Vue(options);
+function insert(){
+	var index=options.data.items.length;
+	var item={
+			title:"新商品"
+	};
+	options.data.items[index]=item;
+}
+
+</script>
+</html>
