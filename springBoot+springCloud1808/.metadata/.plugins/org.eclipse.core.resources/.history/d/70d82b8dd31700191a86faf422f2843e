@@ -1,0 +1,15 @@
+package util;
+
+import java.io.IOException;
+
+public class HttpClientPost {
+
+	public static void main(String[] args) throws ClientProtocolException, IOException {
+		String url = "http://localhost:7020/actuator/refresh";
+		HttpPost httpPost = new HttpPost(url);
+		CloseableHttpClient client = HttpClients.createDefault();
+		
+		client.execute(httpPost);
+	}
+
+}

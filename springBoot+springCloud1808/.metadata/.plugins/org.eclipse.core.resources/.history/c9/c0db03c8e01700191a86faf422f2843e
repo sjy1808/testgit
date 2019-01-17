@@ -1,0 +1,5 @@
+package com.tedu.ssm.controller;
+
+public class UserController {
+
+}

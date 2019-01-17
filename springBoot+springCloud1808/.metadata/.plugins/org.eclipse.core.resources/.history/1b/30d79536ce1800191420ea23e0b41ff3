@@ -1,0 +1,5 @@
+package com.jt.common.vo;
+
+public class SysResult {
+
+}

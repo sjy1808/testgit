@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ZuulFallback.java&apos; to &apos;jt-zuul/src/main/java/com.tedu.fallback&apos;&#x0D;&#x0A;- Original project: &apos;Zuul&apos;&#x0D;&#x0A;- Destination element: &apos;jt-zuul/src/main/java/com.tedu.fallback&apos;&#x0D;&#x0A;- Original element: &apos;com.tedu.fallback.ZuulFallback.java&apos;" description="Copy compilation unit" destination="=jt-zuul/src\/main\/java&lt;com.tedu.fallback" element1="/src\/main\/java&lt;com.tedu.fallback{ZuulFallback.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1547601348552" units="1" version="1.0"/>
+</session>

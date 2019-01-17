@@ -1,0 +1,5 @@
+package com.tedu.ssm.pojo;
+
+public class User {
+
+}

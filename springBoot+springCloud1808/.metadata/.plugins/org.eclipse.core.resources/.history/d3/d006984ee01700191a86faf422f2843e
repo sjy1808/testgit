@@ -1,0 +1,16 @@
+package com.tedu.ssm.service.impl;
+
+import java.util.List;
+
+import com.tedu.ssm.pojo.User;
+import com.tedu.ssm.service.UserService;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public List<User> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

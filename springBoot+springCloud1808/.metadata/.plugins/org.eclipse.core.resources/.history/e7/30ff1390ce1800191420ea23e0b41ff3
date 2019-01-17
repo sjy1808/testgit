@@ -1,0 +1,5 @@
+package com.jt.sso.feign;
+
+public interface UserFeign {
+
+}

@@ -1,0 +1,5 @@
+package com.tedu.fallback;
+
+public class ZuulFallback {
+
+}

@@ -1,0 +1,21 @@
+package com.tedu.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tedu.mapper.UserMapper;
+import com.tedu.pojo.User;
+
+@Service
+public class UserServiceImpl {
+
+	@Autowired
+	private UserMapper userMapper;
+	
+	public List<User> findAll(){
+		return userMapper.findAll();
+	}
+	
+}

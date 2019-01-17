@@ -1,0 +1,8 @@
+package com.jt.sso.service;
+
+import com.jt.common.vo.SysResult;
+
+public interface UserService {
+
+	public SysResult check(String param,Integer type);
+}

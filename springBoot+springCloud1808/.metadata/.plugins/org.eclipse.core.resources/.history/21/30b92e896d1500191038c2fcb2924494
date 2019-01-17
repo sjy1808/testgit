@@ -1,0 +1,5 @@
+package com.tedu.feign;
+
+public interface HelloFeign {
+
+}

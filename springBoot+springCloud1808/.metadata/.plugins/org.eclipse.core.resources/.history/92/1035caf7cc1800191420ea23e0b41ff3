@@ -1,0 +1,11 @@
+package com.jt.sso.mapper;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.jt.sso.pojo.User;
+
+public interface UserMapper {
+
+	public Integer check(@Param("param") String param,@Param("paramType") String paramType);
+	public void save(User user);
+}

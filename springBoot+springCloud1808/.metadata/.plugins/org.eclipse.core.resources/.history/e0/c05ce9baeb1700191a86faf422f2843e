@@ -1,0 +1,8 @@
+package com.tedu;
+
+public class RunAppProviderUser {
+
+	public static void main(String[] args) {
+		
+	}
+}

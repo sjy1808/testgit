@@ -1,0 +1,5 @@
+package com.tedu.ssm.mapper;
+
+public interface UserMapper {
+
+}

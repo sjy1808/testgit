@@ -1,0 +1,5 @@
+package com.tedu.ssm.feign;
+
+public interface UserFeign {
+
+}

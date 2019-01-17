@@ -1,0 +1,16 @@
+package com.jt.sso.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jt.sso.mapper.UserMapper;
+
+@Service
+public class UserServiceImpl {
+
+	@Autowired
+	private UserMapper userMapper;
+	
+	@Autowired
+	private RedisService redisService;
+}

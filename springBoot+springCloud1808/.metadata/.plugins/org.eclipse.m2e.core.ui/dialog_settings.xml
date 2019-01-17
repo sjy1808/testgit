@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.tedu"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="jt-zuul"/>
+			<item value="jt-eureka-server"/>
+			<item value="jt-sso"/>
+			<item value="jt-sso-provider"/>
+			<item value="consumer-user"/>
+			<item value="provider-user"/>
+			<item value="config-client"/>
+			<item value="config-server"/>
+			<item value="sidecar"/>
+			<item value="Zuul"/>
+			<item value="consumer-hystrix"/>
+			<item value="zuul"/>
+			<item value="consumer-feign"/>
+			<item value="consumer-client"/>
+			<item value="provider-hello"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\springBoot+springCloud1808\jt-eureka-server\src\main\java\com\tedu\RunAppEurekaServer.java"/>
+			<item value="D:\springBoot+springCloud1808\1808-hello"/>
+			<item value="D:\springBoot+springCloud1808\provider-user\src\main\resources\application.yml"/>
+			<item value="D:\springBoot+springCloud1808\provider-user\src\main\java\com\tedu\RunAppProviderUser.java"/>
+			<item value="D:\springBoot+springCloud1808\config-client\src\main\java\com\tedu\RunAppConfigClient.java"/>
+			<item value="D:\springBoot+springCloud1808\config-server\src\main\java\com\tedu\RunAppConfig.java"/>
+			<item value="D:\springBoot+springCloud1808\eureka-server\src\main\resources\application.yml"/>
+			<item value="D:\springBoot+springCloud1808\consumer-hystrix\src\main\java\com\tedu\client\EurekaServiceFeign.java"/>
+			<item value="D:\springBoot+springCloud1808\provider-hello\src\main\java\com\tedu\RunAppProviderHello.java"/>
+			<item value="D:\springBoot+springCloud1808\consumer-feign\src\main\java\com\tedu\RunAppConsumerFeign.java"/>
+			<item value="D:\springBoot+springCloud1808\consumer-client\src\main\java\com\tedu\RunAppConsumerHello.java"/>
+			<item value="D:\springBoot+springCloud1808\eureka-server\src\main\java\com\tedu\RunApp.java"/>
+			<item value="D:\springBoot+springCloud1808\eureka-server"/>
+			<item value="D:\springBoot+springCloud1808\1808-ssm"/>
+			<item value="D:\springBoot+springCloud1808\1808-hello\pom.xml"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

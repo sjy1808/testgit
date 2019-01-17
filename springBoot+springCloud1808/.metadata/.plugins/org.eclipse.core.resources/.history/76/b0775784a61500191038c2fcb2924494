@@ -1,0 +1,5 @@
+package com.tedu.client;
+
+public interface EurekaServiceFeign {
+
+}
