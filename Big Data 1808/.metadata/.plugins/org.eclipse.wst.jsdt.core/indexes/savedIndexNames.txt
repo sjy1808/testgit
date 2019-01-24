@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Big Data 1808\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3283417537.index
+3812629412.index
+1447500571.index
+2573084609.index
+3160089577.index
+4215797438.index

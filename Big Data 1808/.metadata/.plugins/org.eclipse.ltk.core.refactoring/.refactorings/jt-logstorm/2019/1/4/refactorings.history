@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;jt-logstorm&apos;&#x0D;&#x0A;- Original project: &apos;jt-logstorm&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ClearBolt.java&#x0D;&#x0A;     FluxTopology.java&#x0D;&#x0A;     PrintBolt.java" description="Delete elements" element1="/src&lt;{ClearBolt.java" element2="/src&lt;{FluxTopology.java" element3="/src&lt;{PrintBolt.java" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1548227932249" subPackages="false" version="1.0"/>
+</session>
