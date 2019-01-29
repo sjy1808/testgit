@@ -1,0 +1,5 @@
+package ssh01;
+
+public class HelloAction {
+
+}

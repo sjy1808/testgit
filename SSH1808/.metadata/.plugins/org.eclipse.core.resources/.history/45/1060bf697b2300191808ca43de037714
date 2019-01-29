@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <package name="demo" namespace="/demo" extends="struts-default">
+   	<action name="hello" class="cn.tedu.HelloAction">
+   		<result name="success">
+   			/WEB-INF/msg.jsp
+   		</result>
+   	</action>
+   </package>
+   <package name="message" namespace="/message" extends="struts-default">
+   	<action name="loginForm" >
+   		<result>/WEB-INF/login.jsp</result>
+   	</action>
+   	<action name="login" class="cn.tedu.LoginAction">
+   		<result name="success">/WEB-INF/msg.jsp</result>
+   	</action>
+   </package>
+   <package name="user" namespace="/user" extends="struts-default">
+   	<!-- 注册拦截器和拦截器栈 -->
+   	<interceptors>
+   		<interceptor name="demo" class="cn.tedu.DemoInterceptor">
+   		<interceptor-stack name="myStack">
+   			<interceptor-ref name="demo"></interceptor-ref>
+   			<interceptor-ref name="defaultStack></interceptor-ref>
+   		</interceptor-stack>
+   		</interceptor>
+   	</interceptors>
+   	<action name="loginForm">
+   		<result>/WEB-INF/login2.jsp</result>
+   	</action>
+   	<action name="login" class="cn.tedu.UserActionLogin">
+   		<result name="success">/WEB-INF/msg.jsp</result>
+   	</action>
+   </package>
+   <package name="login" namespace="/login" extends="struts-default" >
+   	<action name="loginForm">
+   		<result>/WEB-INF/loginForm.jsp</result>
+   	</action>
+   	<action name="login2" class="cn.tedu.Login2Action">
+   		<result name="success">/WEB-INF/ok.jsp</result>
+   		<result name="error">/WEB-INF/loginForm.jsp</result>
+   	</action>
+   </package>
+</struts>

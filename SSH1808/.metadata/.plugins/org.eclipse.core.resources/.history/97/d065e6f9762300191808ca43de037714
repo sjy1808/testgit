@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="demo" namespace="/demo" extends="struts-default">
+		<interceptors>
+			<!-- 可以注册多个拦截器 -->
+			<interceptor name="demo" class="cn.tedu.DemoInterceptor"></interceptor>
+		</interceptors>
+		<action name="hello" class="cn.tedu.HelloAction">
+			<result name="success">/WEB-INF/msg.jsp</result>
+		</action>
+	</package>
+	<package name="result" namespace="/result" extends="struts-default" >
+		<action name="hello" class="helloAction">
+			<result name="success">
+				/WEB-INF/msg.jsp
+			</result>
+		</action>
+		<action name="test1">
+			<result type="redirectAction">
+				hello
+			</result>
+		</action>
+		<action name="test2">
+			<result type="redirectAction" >
+				<param name="namespace">
+					/demo
+				</param>
+				<param name="actionName">
+					hello
+				</param>
+			</result>
+		</action>
+		<action name="test3">
+			<result type="redirect">
+				http://doc.tedu.cn
+			</result>
+		</action>
+		<action name="image" class="cn.tedu.ImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/png</param>
+				<param name="inputName">image</param>
+			</result>
+		</action>
+	</package>
+</struts>

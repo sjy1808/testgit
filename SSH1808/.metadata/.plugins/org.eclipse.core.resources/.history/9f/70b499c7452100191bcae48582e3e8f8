@@ -1,0 +1,12 @@
+package ssh01;
+
+public class HelloAction {
+
+	private String message;
+	
+	public String execute() {
+		System.out.println("Hello world!");
+		message="hieee  dkfeikd";
+		return "success";
+	}
+}
