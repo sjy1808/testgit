@@ -1,0 +1,26 @@
+package cn.tedu.test;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import cn.tedu.dao.UserDao;
+import cn.tedu.entity.User;
+
+public class TestCase {
+
+	ApplicationContext ctx;
+	
+	@Before
+	public void inin() {
+		ctx=new ClassPathXmlApplicationContext("spring-context.xml");
+	}
+	
+	@Test
+	public void testUserDao() {
+		UserDao dao=ctx.getBean("userDao",UserDao.class);
+		User user=dao.findByName("JackSon");
+		System.out.println(user);
+	}
+}

@@ -7,6 +7,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="ssh04"/>
 			<item value="hibernate"/>
 			<item value="ssh03"/>
 			<item value="ssh02"/>
@@ -55,6 +56,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\SSH1808\hibernate\src\test\java\cn\tedu\test\TestCase.java"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

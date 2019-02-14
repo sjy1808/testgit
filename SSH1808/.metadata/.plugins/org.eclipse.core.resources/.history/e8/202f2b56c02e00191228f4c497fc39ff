@@ -1,0 +1,112 @@
+package cn.tedu.test;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.junit.Test;
+
+import cn.tedu.Student;
+import cn.tedu.User;
+
+public class TestCase {
+
+	//@Test
+	public void testUser() {
+		//读取配置文件
+		Configuration cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		//获取session对象
+		SessionFactory factory=cfg.buildSessionFactory();
+		Session session=factory.openSession();
+		//通过session操作数据库
+		User u = (User) session.get(User.class, 1);
+		System.out.println(u);
+		session.close();
+	}
+	@Test
+	public void testTeacher() {
+		//读取数据库配置信息
+		Configuration cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		//获取session对象
+		SessionFactory factory=cfg.buildSessionFactory();
+		Session session=factory.openSession();
+		//创建事务
+		Transaction t=session.beginTransaction();
+		t.begin();
+		//创建student对象,给name属性赋值
+		Student stu=new Student();
+		stu.setName("alice");
+		System.out.println(stu);
+		session.save(stu);
+		System.out.println(stu);
+		t.commit();
+		//session.save(对象)
+		session.close();
+	}
+	
+	private static Session openSession() {
+		//读取数据库配置信息
+		Configuration cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		//获取session对象
+		SessionFactory factory=cfg.buildSessionFactory();
+		Session session=factory.openSession();
+		return session;
+	}
+	
+	@Test
+	public void testSelect() {
+		//1.获取session
+		Session s=openSession();
+		//2.编写HQL语句
+		String hql="from Student";
+		//3.创建Query对象
+		Query query=s.createQuery(hql);
+		//4.调用list()方法查询数据
+		List<Student> list=query.list();
+		for (Student student : list) {
+			System.out.println(student);
+		}
+		//5.关闭session
+		s.close();
+	}
+	
+	@Test
+	public void testWhere() {
+		//1.获取session
+		Session s=openSession();
+		//2.编写HQL语句
+		String hql="from Student where name=:name";
+		//3.创建Query对象
+		Query query=s.createQuery(hql);
+		//4.设置参数
+		query.setString("name", "alice");
+		//5.调用list()方法查询数据
+		List<Student> list=query.list();
+		for (Student student : list) {
+			System.out.println(student);
+		}
+		//6.关闭session
+		s.close();
+	}
+	
+	//Student查询所有记录,以ID倒序的方式显示出来
+	@Test
+	public void testOrder() {
+		Session session=openSession();
+		String hql="from Student order by id desc";
+		Query q=session.createQuery(hql);
+		List<Student> list = q.list();
+		for (Student student : list) {
+			System.out.println(student);
+		}
+		session.close();
+	}
+	
+	
+}

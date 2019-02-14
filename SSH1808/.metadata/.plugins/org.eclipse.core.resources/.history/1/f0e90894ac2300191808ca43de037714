@@ -1,8 +1,0 @@
-package cn.tedu.dao;
-
-import cn.tedu.User;
-
-public interface UserDao {
-
-	void save(User user);
-}

@@ -12,6 +12,9 @@
 		<property name="connection.url">jdbc:mysql://localhost:3306/test</property>
 		<!-- 指定相应的映射文件,并加载 -->
 		<mapping resource="User.hbm.xml"/>
+		<mapping resource="Student.hbm.xml"/>
+		<mapping resource="TUser.hbm.xml"/>
+		<mapping resource="TBook.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
 
